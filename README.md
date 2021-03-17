@@ -17,7 +17,7 @@ Simply check out this repo and run the appropriate command below :rocket:
 saucectl run --test-env docker
 ```
 
-![docker example](docker_example.gif)
+![docker example](assets/docker_example.gif)
 
 ### In Sauce Cloud
 
@@ -25,7 +25,7 @@ saucectl run --test-env docker
 saucectl run --test-env sauce
 ```
 
-![sauce cloud example](sauce_cloud_example.gif)
+![sauce cloud example](assets/sauce_cloud_example.gif)
 
 ## The Config
 
