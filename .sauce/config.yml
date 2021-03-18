@@ -16,6 +16,8 @@ docker:
 cypress:
   version: 5.6.0 # See https://docs.saucelabs.com/testrunner-toolkit for a list of supported versions.
   configFile: "cypress.json"  # We determine related files based on the location of the config file.
+# Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
+rootDir: ./
 suites:
   - name: "Chrome"
     browser: "chrome"
