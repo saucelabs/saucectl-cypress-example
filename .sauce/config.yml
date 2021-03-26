@@ -27,5 +27,7 @@ suites:
   - name: "Firefox"
     browser: "firefox"
     platformName: "Windows 10"
+    env:
+      DEBUG: "cypress:*"
     config:
       testFiles: [ "**/*.*" ]

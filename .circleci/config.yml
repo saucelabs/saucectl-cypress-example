@@ -7,12 +7,12 @@ jobs:
     docker:
       - image: circleci/node:12.21
     environment:
-      BUILD_ID: $CIRCLE_BUILD_NUM
-      BUILD_ENV: CircleCI
+      CI_COMMIT_SHORT_SHA: $CIRCLE_SHA1
+      DEBUG: "cypress:*"
     steps:
       - checkout
       - setup_remote_docker:
-          version: 19.03.13
+          version: 20.10.2
       - saucectl/saucectl-run:
           testing-environment: docker
       - saucectl/saucectl-run:
