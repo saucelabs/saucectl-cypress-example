@@ -1,0 +1,26 @@
+version: 2.1
+orbs:
+  saucectl: saucelabs/saucectl-run@1.0.0
+
+jobs:
+  test-cypress:
+    docker:
+      - image: circleci/node:12.21
+    steps:
+      - checkout
+      - setup_remote_docker:
+          version: 20.10.2
+      - saucectl/saucectl-run:
+          testing-environment: docker
+          suite: Chrome
+      - saucectl/saucectl-run:
+          testing-environment: docker
+          suite: Firefox
+      - saucectl/saucectl-run:
+          testing-environment: sauce
+
+workflows:
+  version: 2
+  default_workflow:
+    jobs:
+      - test-cypress
