@@ -22,6 +22,7 @@ suites:
   - name: "Chrome"
     browser: "chrome"
     platformName: "Windows 10" # Only relevant when running a test against the sauce cloud (--test-env sauce).
+    screenResolution: "1920x1080"  # (optional) Only relevant when running a test against the sauce cloud (--test-env sauce).
     config:
       testFiles: [ "**/*.*" ] # Cypress native glob support.
   - name: "Firefox"
