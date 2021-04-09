@@ -30,3 +30,11 @@ suites:
     platformName: "Windows 10"
     config:
       testFiles: [ "**/*.*" ]
+
+# Controls whats artifacts to fetch when the run on Sauce Cloud has finished.
+artifacts:
+  download:
+    when: always
+    match:
+      - console.log
+    directory: ./artifacts/
