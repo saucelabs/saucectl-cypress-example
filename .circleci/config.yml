@@ -15,7 +15,7 @@ jobs:
           suite: Chrome
       - saucectl/saucectl-run:
           testing-environment: docker
-          suite: Firefox
+          suite: Firefox in docker
       - saucectl/saucectl-run:
           testing-environment: sauce
 
