@@ -22,13 +22,17 @@ cypress:
 rootDir: ./
 suites:
   - name: "Chrome"
-    mode: docker
     browser: "chrome"
     platformName: "Windows 10" # Only relevant when running a test against the sauce cloud (--mode sauce).
     screenResolution: "1920x1080"  # (optional) Only relevant when running a test against the sauce cloud (--mode sauce).
     config:
       testFiles: [ "**/*.*" ] # Cypress native glob support.
-  - name: "Firefox"
+  - name: "Firefox in docker"
+    mode: docker
+    browser: "firefox"
+    config:
+      testFiles: [ "**/*.*" ]
+  - name: "Firefox in sauce"
     mode: sauce
     browser: "firefox"
     platformName: "Windows 10"
