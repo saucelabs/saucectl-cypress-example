@@ -21,7 +21,7 @@ cypress:
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
 suites:
-  - name: "Chrome"
+  - name: "Chrome using global mode setting"
     browser: "chrome"
     platformName: "Windows 10" # Only relevant when running a test against the sauce cloud mode.
     screenResolution: "1920x1080"  # (optional) Only relevant when running a test against the sauce cloud mode.
