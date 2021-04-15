@@ -13,7 +13,7 @@ sauce:
       - other tag
     build: Release $CI_COMMIT_SHORT_SHA
 docker:
-  # Affects how test files are transferred to the docker container when using the docker mode (--mode docker).
+  # Affects how test files are transferred to the docker container when using the docker mode (--test-env docker).
   fileTransfer: copy # Choose between mount|copy.
 cypress:
   version: 6.6.0 # See https://docs.saucelabs.com/testrunner-toolkit for a list of supported versions.
@@ -23,8 +23,8 @@ rootDir: ./
 suites:
   - name: "Chrome"
     browser: "chrome"
-    platformName: "Windows 10" # Only relevant when running a test against the sauce cloud (--mode sauce).
-    screenResolution: "1920x1080"  # (optional) Only relevant when running a test against the sauce cloud (--mode sauce).
+    platformName: "Windows 10" # Only relevant when running a test against the sauce cloud (--test-env sauce).
+    screenResolution: "1920x1080"  # (optional) Only relevant when running a test against the sauce cloud (--test-env sauce).
     config:
       testFiles: [ "**/*.*" ] # Cypress native glob support.
   - name: "Firefox in docker"
