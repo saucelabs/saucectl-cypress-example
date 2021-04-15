@@ -10,14 +10,7 @@ jobs:
       - checkout
       - setup_remote_docker:
           version: 20.10.2
-      - saucectl/saucectl-run:
-          testing-environment: docker
-          suite: Chrome
-      - saucectl/saucectl-run:
-          testing-environment: docker
-          suite: Firefox in docker
-      - saucectl/saucectl-run:
-          testing-environment: sauce
+      - saucectl/saucectl-run
 
 workflows:
   version: 2
