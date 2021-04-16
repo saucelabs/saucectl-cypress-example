@@ -21,5 +21,5 @@ jobs:
       - name: Saucectl RUN Docker and Cloud
         uses: saucelabs/saucectl-run-action@v1
         with:
-          testing-environment: sauce
+          testing-environment: ""
           concurrency: 10
