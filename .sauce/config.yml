@@ -1,5 +1,7 @@
 apiVersion: v1alpha
 kind: cypress
+defaults:
+  mode: sauce
 sauce:
   region: us-west-1
   concurrency: 2 # Controls how many suites are executed at the same time.
@@ -11,7 +13,7 @@ sauce:
       - other tag
     build: Release $CI_COMMIT_SHORT_SHA
 docker:
-  # Affects how test files are transferred to the docker container when using the docker mode (--test-env docker).
+  # Affects how test files are transferred to the docker container when using the docker mode.
   fileTransfer: copy # Choose between mount|copy.
 cypress:
   version: 6.6.0 # See https://docs.saucelabs.com/testrunner-toolkit for a list of supported versions.
@@ -19,13 +21,19 @@ cypress:
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
 suites:
-  - name: "Chrome"
+  - name: "Chrome using global mode setting" # Since the suite doesn't specify the `mode`, it'll inherit the mode specified via `defaults.mode` (see line number 3 and 4 of this config file).
     browser: "chrome"
-    platformName: "Windows 10" # Only relevant when running a test against the sauce cloud (--test-env sauce).
-    screenResolution: "1920x1080"  # (optional) Only relevant when running a test against the sauce cloud (--test-env sauce).
+    platformName: "Windows 10" # Only relevant when running a test against the sauce cloud mode.
+    screenResolution: "1920x1080"  # (optional) Only relevant when running a test against the sauce cloud mode.
     config:
       testFiles: [ "**/*.*" ] # Cypress native glob support.
-  - name: "Firefox"
+  - name: "Firefox in docker"
+    mode: docker
+    browser: "firefox"
+    config:
+      testFiles: [ "**/*.*" ]
+  - name: "Firefox in sauce"
+    mode: sauce
     browser: "firefox"
     platformName: "Windows 10"
     config:
