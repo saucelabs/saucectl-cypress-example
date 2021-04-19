@@ -21,39 +21,15 @@ saucectl configure
 
 ## Running The Examples
 
-Simply check out this repo and set `config.yml` like following :rocket:
+Simply check out this repo and run the command below :rocket:
 
-### In Docker
+3 test suites are being triggered in `docker` and `sauce` mode. `saucectl` will run the suites marked as `docker` mode firstly and then run the suites which are marked as `sauce` mode.
 
-```yaml
-defaults:
-  mode: docker
-```
-or specify docker mode on suite level
-
-```yaml
-suites:
-  - name: "Chrome"
-    mode: docker
+```bash
+saucectl run
 ```
 
-![docker example](assets/docker_example.gif)
-
-### In Sauce Cloud
-
-```yaml
-defaults:
-  mode: sauce
-```
-or specify sauce mode on suite level
-
-```yaml
-suites:
-  - name: "Chrome"
-    mode: sauce
-```
-
-![sauce cloud example](assets/sauce_cloud_example.gif)
+![running example](assets/cypress-example.gif)
 
 ## The Config
 
