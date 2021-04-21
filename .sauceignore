@@ -1,6 +1,6 @@
 # This file instructs saucectl to not package any files mentioned here.
-examples/
-artifacts/
+/examples/
+/artifacts/
 cypress/videos/
 cypress/results/
 cypress/screenshots/
