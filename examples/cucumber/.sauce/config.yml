@@ -1,16 +1,16 @@
 apiVersion: v1alpha
 kind: cypress
+# https://docs.saucelabs.com/testrunner-toolkit/configuration/common-syntax#defaults
 defaults:
   mode: sauce
 sauce:
   region: us-west-1
   concurrency: 2 # Controls how many suites are executed at the same time.
   metadata:
-    name: saucectl cypress example
+    name: saucectl cypress cucumber example
     tags:
-      - e2e
-      - release team
-      - other tag
+      - cucumber
+      - example repo
     build: Github Run $GITHUB_RUN_ID
 docker:
   # Affects how test files are transferred to the docker container when using the docker mode.
@@ -21,28 +21,23 @@ cypress:
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
 suites:
-  - name: "Chrome using global mode setting" # Since the suite doesn't specify the `mode`, it'll inherit the mode specified via `defaults.mode` (see line number 3 and 4 of this config file).
+  - name: "Chrome"
     browser: "chrome"
-    platformName: "Windows 10" # Only relevant when running a test against the sauce cloud mode.
-    screenResolution: "1920x1080"  # (optional) Only relevant when running a test against the sauce cloud mode.
-    config:
-      testFiles: [ "**/*.*" ] # Cypress native glob support.
-  - name: "Firefox in docker"
-    mode: docker
-    browser: "firefox"
-    config:
-      testFiles: [ "**/*.*" ]
-  - name: "Firefox in sauce"
-    mode: sauce
-    browser: "firefox"
     platformName: "Windows 10"
     config:
-      testFiles: [ "**/*.*" ]
+      testFiles: [ "**/*.feature" ] # Cypress native glob support.
 
 # Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
 artifacts:
   download:
-    when: always
+    when: never
     match:
       - console.log
     directory: ./artifacts/
+
+# https://docs.saucelabs.com/testrunner-toolkit/configuration/common-syntax#npm
+# Any additional dependencies need to be configured here so that they are installed on demand.
+# Install only what you truly need to get your tests running, as installing dependencies takes time.
+npm:
+  packages:
+    "cypress-cucumber-preprocessor": "4.0.3"
