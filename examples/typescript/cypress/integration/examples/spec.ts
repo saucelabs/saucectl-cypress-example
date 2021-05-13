@@ -1,11 +1,12 @@
-import { sum } from '../../../src/foo'
-
-describe('TypeScript spec', () => {
-  it('works', () => {
-    cy.wrap('foo').should('equal', 'foo')
+describe('Actions', () => {
+  beforeEach(() => {
+    const url:string = "https://example.cypress.io/commands/actions";
+    cy.visit(url);
   })
-
-  it('calls TS source file', () => {
-    expect(sum(1, 2, 3, 4)).to.equal(10)
+  it('.type() - type into a DOM element', () => {
+    // https://on.cypress.io/type
+    const email:string = "fake@email.com";
+    cy.get('.action-email')
+        .type(email).should('have.value', email)
   })
 })
