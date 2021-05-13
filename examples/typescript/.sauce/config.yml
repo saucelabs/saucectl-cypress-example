@@ -1,0 +1,53 @@
+apiVersion: v1alpha
+kind: cypress
+defaults:
+  mode: sauce
+sauce:
+  region: us-west-1
+  concurrency: 2 # Controls how many suites are executed at the same time.
+  metadata:
+    name: saucectl cypress example
+    tags:
+      - e2e
+      - release team
+      - other tag
+    build: Github Run $GITHUB_RUN_ID
+docker:
+  # Affects how test files are transferred to the docker container when using the docker mode.
+  fileTransfer: copy # Choose between mount|copy.
+cypress:
+  version: 7.1.0 # See https://docs.saucelabs.com/testrunner-toolkit for a list of supported versions.
+  configFile: "cypress.json"  # We determine related files based on the location of the config file.
+# Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
+rootDir: ./
+suites:
+  - name: "Chrome using global mode setting" # Since the suite doesn't specify the `mode`, it'll inherit the mode specified via `defaults.mode` (see line number 3 and 4 of this config file).
+    browser: "chrome"
+    platformName: "Windows 10" # Only relevant when running a test against the sauce cloud mode.
+    screenResolution: "1920x1080"  # (optional) Only relevant when running a test against the sauce cloud mode.
+    config:
+      testFiles: [ "**/*.*" ] # Cypress native glob support.
+  - name: "Firefox in docker"
+    mode: docker
+    browser: "firefox"
+    config:
+      testFiles: [ "**/*.*" ]
+  - name: "Firefox in sauce"
+    mode: sauce
+    browser: "firefox"
+    platformName: "Windows 10"
+    config:
+      testFiles: [ "**/*.*" ]
+
+# Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
+artifacts:
+  download:
+    when: always
+    match:
+      - console.log
+    directory: ./artifacts/
+
+npm:
+  registry: https://registry.npmjs.org
+  packages:
+    "typescript": "4.2.4"
