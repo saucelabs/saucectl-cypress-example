@@ -32,12 +32,6 @@ suites:
     browser: "firefox"
     config:
       testFiles: [ "**/*.*" ]
-  - name: "Firefox in sauce"
-    mode: sauce
-    browser: "firefox"
-    platformName: "Windows 10"
-    config:
-      testFiles: [ "**/*.*" ]
 
 # Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
 artifacts:
