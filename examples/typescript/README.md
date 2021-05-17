@@ -30,3 +30,6 @@ saucectl run
 ## The Config
 
 [Follow me](.sauce/config.yml) if you'd like to see how saucectl is configured for this example.
+
+**NOTE:**
+Some examples were taken from the cypress.io testing [repository](https://github.com/cypress-io/cypress-example-kitchensink) 
