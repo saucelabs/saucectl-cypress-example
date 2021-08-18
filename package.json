@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/saucelabs/saucectl-cypress-example#readme",
   "dependencies": {
-    "cypress": "^8.3.0"
+    "cypress": "7.7.0"
   }
 }
