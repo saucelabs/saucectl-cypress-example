@@ -6,7 +6,6 @@ sauce:
   region: us-west-1
   concurrency: 2 # Controls how many suites are executed at the same time.
   metadata:
-    name: saucectl cypress example
     tags:
       - e2e
       - release team
@@ -18,6 +17,17 @@ docker:
 cypress:
   version: 7.3.0 # See https://docs.saucelabs.com/testrunner-toolkit for a list of supported versions.
   configFile: "cypress.json"  # We determine related files based on the location of the config file.
+
+  reporters:
+    - name: cypress-mochawesome
+      options:
+        reportDir: cypress/report
+        charts: true
+        reportPageTitle: my-custom-title
+npm:
+  packages:
+    cypress-mochawesome-reporter: "2.2.1"
+
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
 suites:
