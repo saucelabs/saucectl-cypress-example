@@ -35,7 +35,7 @@ suites:
     browser: "chrome"
     platformName: "Windows 10" # Only relevant when running a test against the sauce cloud mode.
     screenResolution: "1920x1080"  # (optional) Only relevant when running a test against the sauce cloud mode.
-    shard: spec
+    shard: spec # (optional) Allocate one VM per spec for a high degree of parallelism.
     config:
       testFiles: [ "**/*.*" ] # Cypress native glob support.
   - name: "Firefox in docker"
