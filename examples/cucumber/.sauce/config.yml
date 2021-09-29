@@ -24,6 +24,7 @@ suites:
   - name: "Chrome"
     browser: "chrome"
     platformName: "Windows 10"
+    shard: spec
     config:
       testFiles: [ "**/*.feature" ] # Cypress native glob support.
 
