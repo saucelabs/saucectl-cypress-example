@@ -21,9 +21,10 @@ cypress:
 #   reporters:
 #     - name: cypress-mochawesome-reporter
 #       options:
-#         reportDir: cypress/report
+#         reportDir: __assets__/cypress/report
 #         charts: true
 #         reportPageTitle: my-custom-title
+#         json: true
 # npm:
 #   packages:
 #     cypress-mochawesome-reporter: "2.2.1"
