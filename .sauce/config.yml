@@ -39,12 +39,12 @@ suites:
     shard: spec # (optional) Allocate one VM per spec for a high degree of parallelism.
     config:
       testFiles: [ "**/*.*" ] # Cypress native glob support.
-  - name: "Firefox in docker"
-    mode: docker
-    browser: "firefox"
-    shard: spec
-    config:
-      testFiles: [ "**/*.*" ]
+  # - name: "Firefox in docker"
+  #   mode: docker
+  #   browser: "firefox"
+  #   shard: spec
+  #   config:
+  #     testFiles: [ "**/*.*" ]
   - name: "Firefox in sauce"
     mode: sauce
     browser: "firefox"
