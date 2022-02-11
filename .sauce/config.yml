@@ -15,7 +15,7 @@ docker:
   # Affects how test files are transferred to the docker container when using the docker mode.
   fileTransfer: copy # Choose between mount|copy.
 cypress:
-  version: 8.6.0 # See https://docs.saucelabs.com/testrunner-toolkit for a list of supported versions.
+  version: 9.3.1 # See https://docs.saucelabs.com/testrunner-toolkit for a list of supported versions.
   configFile: "cypress.json"  # We determine related files based on the location of the config file.
 
 #   reporters:
@@ -45,11 +45,11 @@ suites:
   #   shard: spec
   #   config:
   #     testFiles: [ "**/*.*" ]
-  - name: "Firefox in sauce"
+  - name: "Firefox on Mac"
     mode: sauce
     browser: "firefox"
     shard: spec
-    platformName: "Windows 10"
+    platformName: "mac 11.00"
     config:
       testFiles: [ "**/*.*" ]
 
