@@ -40,5 +40,7 @@ artifacts:
   download:
     when: always
     match:
-      - console.log
+      - "*container.json"
+      - "*result.json"
+      - "*.mp4"
     directory: ./artifacts/

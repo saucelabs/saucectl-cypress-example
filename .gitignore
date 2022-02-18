@@ -2,3 +2,6 @@ node_modules/
 artifacts/
 sauce-app-payload*
 cypress/videos/
+allure-results
+allure-report
+.DS_Store
