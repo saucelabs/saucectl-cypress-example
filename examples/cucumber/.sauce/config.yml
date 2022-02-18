@@ -1,6 +1,6 @@
 apiVersion: v1alpha
 kind: cypress
-# https://docs.saucelabs.com/testrunner-toolkit/configuration/common-syntax#defaults
+# https://docs.saucelabs.com/web-apps/automated-testing/cypress/yaml/
 defaults:
   mode: sauce
 sauce:
@@ -16,7 +16,7 @@ docker:
   # Affects how test files are transferred to the docker container when using the docker mode.
   fileTransfer: copy # Choose between mount|copy.
 cypress:
-  version: 8.3.0 # See https://docs.saucelabs.com/testrunner-toolkit for a list of supported versions.
+  version: 8.3.0 # See https://docs.saucelabs.com/web-apps/automated-testing/cypress/ for a list of supported versions.
   configFile: "cypress.json"  # We determine related files based on the location of the config file.
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
@@ -36,7 +36,7 @@ artifacts:
       - console.log
     directory: ./artifacts/
 
-# https://docs.saucelabs.com/testrunner-toolkit/configuration/common-syntax#npm
+# https://docs.saucelabs.com/web-apps/automated-testing/cypress/yaml/#npm
 # Any additional dependencies need to be configured here so that they are installed on demand.
 # Install only what you truly need to get your tests running, as installing dependencies takes time.
 npm:
