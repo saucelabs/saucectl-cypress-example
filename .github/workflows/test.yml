@@ -56,3 +56,22 @@ jobs:
         run: |
           cd examples/typescript
           saucectl run
+
+  allure-plugin:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install saucectl
+        uses: saucelabs/saucectl-run-action@v1
+        with:
+          skip-run: true
+          testing-environment: ""
+          concurrency: 10
+
+      - name: Cypress with Allure Plugin
+        run: |
+          cd examples/allure-plugin
+          saucectl run
+

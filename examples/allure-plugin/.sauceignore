@@ -1,0 +1,8 @@
+# Remove this to have node_modules uploaded with code
+# See more in https://docs.saucelabs.com/testrunner-toolkit/configuration/#excluding-files-from-the-bundle
+node_modules/
+
+/artifacts/
+cypress/videos/
+cypress/results/
+cypress/screenshots/
