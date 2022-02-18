@@ -2,6 +2,7 @@
 # See more in https://docs.saucelabs.com/testrunner-toolkit/configuration/#excluding-files-from-the-bundle
 node_modules/
 
+/artifacts/
 cypress/videos/
 cypress/results/
 cypress/screenshots/
