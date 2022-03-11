@@ -49,7 +49,7 @@ suites:
     mode: sauce
     browser: "firefox"
     shard: spec
-    platformName: "mac 11.00"
+    platformName: "macOS 11.00"
     config:
       testFiles: [ "**/*.*" ]
 
