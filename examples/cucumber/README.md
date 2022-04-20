@@ -5,7 +5,7 @@ Example running saucectl with cypress & cucumber.
 ## What You'll Need
 
 The steps below illustrate one of the quickest ways to get set up. If you'd like a more in-depth guide, please check out
-our [documentation](https://docs.saucelabs.com/testrunner-toolkit/installation).
+our [documentation](https://docs.saucelabs.com/dev/cli/saucectl/#installing-saucectl).
 
 ### Install `saucectl`
 
@@ -29,7 +29,7 @@ saucectl run
 
 ## The Config
 
-[Follow me](.sauce/config.yml) if you'd like to see how saucectl is configured for this example. 
+[Follow me](.sauce/config.yml) if you'd like to see how saucectl is configured for this example.
 
 Note: Take note of the following setting in the package.json:
 ```json
