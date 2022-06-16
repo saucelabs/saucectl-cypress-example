@@ -10,13 +10,13 @@ sauce:
       - e2e
       - release team
       - other tag
-    build: Github Run $GITHUB_RUN_ID
 docker:
+  #image: cypress
   # Affects how test files are transferred to the docker container when using the docker mode.
   fileTransfer: copy # Choose between mount|copy.
 cypress:
-  version: 9.7.0 # See https://docs.saucelabs.com/dev/cli/saucectl/#supported-frameworks-and-browsers for a list of supported versions.
-  configFile: "cypress.json"  # We determine related files based on the location of the config file.
+  version: 10.1.0 # See https://docs.saucelabs.com/dev/cli/saucectl/#supported-frameworks-and-browsers for a list of supported versions.
+  configFile: "cypress.config.js"  # We determine related files based on the location of the config file.
 
 #   reporters:
 #     - name: cypress-mochawesome-reporter
@@ -34,24 +34,14 @@ rootDir: ./
 suites:
   - name: "Chrome using global mode setting" # Since the suite doesn't specify the `mode`, it'll inherit the mode specified via `defaults.mode` (see line number 3 and 4 of this config file).
     browser: "chrome"
-    platformName: "Windows 10" # Only relevant when running a test against the sauce cloud mode.
-    screenResolution: "1920x1080"  # (optional) Only relevant when running a test against the sauce cloud mode.
-    shard: spec # (optional) Allocate one VM per spec for a high degree of parallelism.
+    platformName: "Windows 10"
     config:
-      testFiles: [ "**/*.*" ] # Cypress native glob support.
-  # - name: "Firefox in docker"
-  #   mode: docker
-  #   browser: "firefox"
-  #   shard: spec
-  #   config:
-  #     testFiles: [ "**/*.*" ]
+      specPattern: [ "cypress/e2e/**/*.*" ] # Cypress native glob support.
   - name: "Firefox on Mac"
-    mode: sauce
     browser: "firefox"
-    shard: spec
     platformName: "macOS 11.00"
     config:
-      testFiles: [ "**/*.*" ]
+      specPattern: [ "cypress/e2e/**/*.*" ] # Cypress native glob support.
 
 # Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
 artifacts:
