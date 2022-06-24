@@ -12,13 +12,44 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
-const cucumber = require('cypress-cucumber-preprocessor').default
+const preprocessor = require('@badeball/cypress-cucumber-preprocessor');
+const webpack = require("@cypress/webpack-preprocessor");
 
 /**
  * @type {Cypress.PluginConfig}
  */
-module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
-    on('file:preprocessor', cucumber())
+module.exports = async (on, config) => {
+  await preprocessor.addCucumberPreprocessorPlugin(on, config);
+  on(
+    "file:preprocessor",
+    webpack({
+      webpackOptions: {
+        resolve: {
+          extensions: [".ts", ".js"],
+        },
+        module: {
+          rules: [
+            {
+              test: /\.ts$/,
+              exclude: [/node_modules/],
+              use: [
+                {
+                  loader: "ts-loader",
+                },
+              ],
+            },
+            {
+              test: /\.feature$/,
+              use: [
+                {
+                  loader: "@badeball/cypress-cucumber-preprocessor/webpack",
+                  options: config,
+                },
+              ],
+            },
+          ],
+        },
+      },
+    })
+  );
 }

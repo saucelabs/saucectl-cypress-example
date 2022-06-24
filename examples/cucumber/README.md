@@ -27,14 +27,12 @@ Simply check out this repo, navigate into `examples/cucumber` and run the comman
 saucectl run
 ```
 
+### Running With Tags
+
+```bash
+saucectl run --env "CYPRESS_TAGS=@smoke"
+```
+
 ## The Config
 
 [Follow me](.sauce/config.yml) if you'd like to see how saucectl is configured for this example.
-
-Note: Take note of the following setting in the package.json:
-```json
-  "cypress-cucumber-preprocessor": {
-    "nonGlobalStepDefinitions": true
-  }
-```
-This is a very important configuration for the [preprocessor](https://www.npmjs.com/package/cypress-cucumber-preprocessor) to be able to pickup implementations for its feature files.
