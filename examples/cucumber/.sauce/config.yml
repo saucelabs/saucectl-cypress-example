@@ -10,7 +10,7 @@ sauce:
     tags:
       - cucumber
       - example repo
-    build: saucectl cypress cucumber example
+    build: Github Run $GITHUB_RUN_ID
 docker:
   # Affects how test files are transferred to the docker container when using the docker mode.
   fileTransfer: copy # Choose between mount|copy.
