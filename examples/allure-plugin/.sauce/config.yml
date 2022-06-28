@@ -24,9 +24,9 @@ npm:
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
 suites:
-  - name: "Firefox in sauce"
+  - name: "Chrome in sauce"
     mode: sauce
-    browser: "firefox"
+    browser: "chrome"
     shard: spec
     platformName: "Windows 10"
     config:

@@ -7,7 +7,6 @@ sauce:
   region: us-west-1
   concurrency: 2 # Controls how many suites are executed at the same time.
   metadata:
-    name: saucectl cypress cucumber example
     tags:
       - cucumber
       - example repo
@@ -24,7 +23,6 @@ suites:
   - name: "Chrome"
     browser: "chrome"
     platformName: "Windows 10"
-    shard: spec
     config:
       testFiles: [ "**/*.feature" ] # Cypress native glob support.
 
@@ -41,4 +39,6 @@ artifacts:
 # Install only what you truly need to get your tests running, as installing dependencies takes time.
 npm:
   packages:
-    "cypress-cucumber-preprocessor": "4.0.3"
+    "@badeball/cypress-cucumber-preprocessor": "^11.2.0"
+    "@cypress/webpack-preprocessor": "^5.12.0"
+    "webpack": "^5.73.0"

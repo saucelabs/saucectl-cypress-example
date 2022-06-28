@@ -1,6 +1,6 @@
-import { Given, Then } from "cypress-cucumber-preprocessor/steps";
+import { When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
-Given('I open cypress actions page', () => {
+When('I open cypress actions page', () => {
   cy.visit('https://example.cypress.io/commands/actions');
 });
 
