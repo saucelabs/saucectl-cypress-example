@@ -11,7 +11,6 @@ module.exports = defineConfig({
     // You may want to clean this up later by importing these.
     setupNodeEvents(on, config) {
       allureWriter(on, config);
-      console.log("config: ", config)
       return config;
     },
   },
