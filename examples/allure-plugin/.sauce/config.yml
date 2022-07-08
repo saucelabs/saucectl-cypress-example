@@ -1,4 +1,4 @@
-apiVersion: v1alpha
+apiVersion: v1
 kind: cypress
 defaults:
   mode: sauce
@@ -16,10 +16,7 @@ docker:
   fileTransfer: copy # Choose between mount|copy.
 cypress:
   version: 9.7.0 # See https://docs.saucelabs.com/testrunner-toolkit for a list of supported versions.
-  configFile: "cypress.json"  # We determine related files based on the location of the config file.
-npm:
-  packages:
-    "@shelex/cypress-allure-plugin": "*"
+  configFile: "cypress.config.js"  # We determine related files based on the location of the config file.
 
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
@@ -30,7 +27,8 @@ suites:
     shard: spec
     platformName: "Windows 10"
     config:
-      testFiles: [ "**/*.*" ]
+      testingType: e2e
+      specPattern: [ "cypress/e2e/**/*.*" ]
       env:
         allure: true
         allureResultsPath: __assets__/allure-results/
@@ -40,5 +38,5 @@ artifacts:
   download:
     when: always
     match:
-      - console.log
+      - "*"
     directory: ./artifacts/
