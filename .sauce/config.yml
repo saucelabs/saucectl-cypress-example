@@ -34,7 +34,7 @@ rootDir: ./
 suites:
   - name: "Chrome using global mode setting" # Since the suite doesn't specify the `mode`, it'll inherit the mode specified via `defaults.mode` (see line number 3 and 4 of this config file).
     browser: "chrome"
-    platformName: "Windows 10" # Only relevant when running a test against the sauce cloud mode.
+    platformName: "Windows 11" # Only relevant when running a test against the sauce cloud mode.
     screenResolution: "1920x1080"  # (optional) Only relevant when running a test against the sauce cloud mode.
     shard: spec # (optional) Allocate one VM per spec for a high degree of parallelism.
     config:
@@ -49,7 +49,7 @@ suites:
     mode: sauce
     browser: "firefox"
     shard: spec
-    platformName: "macOS 11.00"
+    platformName: "macOS 12"
     config:
       testFiles: [ "**/*.*" ]
 
