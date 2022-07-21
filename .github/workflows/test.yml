@@ -84,8 +84,14 @@ jobs:
           testing-environment: ""
           concurrency: 10
 
-      - name: Cypress with Allure Plugin
-        run: |
-          cd examples/allure-plugin
-          saucectl run
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+          cache-dependency-path: examples/allure-plugin/package-lock.json
 
+      - name: Cypress with Allure Plugin
+        working-directory: examples/allure-plugin
+        run: |
+          npm ci
+          saucectl run
