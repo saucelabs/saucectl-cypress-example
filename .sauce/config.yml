@@ -26,8 +26,8 @@ cypress:
 #         reportPageTitle: my-custom-title
 #         json: true
 # npm:
-#   packages:
-#     cypress-mochawesome-reporter: "2.2.1"
+#   dependencies:
+#     - "cypress-mochawesome-reporter"
 
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
