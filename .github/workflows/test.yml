@@ -52,9 +52,16 @@ jobs:
           testing-environment: ""
           concurrency: 10
 
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+          cache-dependency-path: examples/typescript/package-lock.json
+
       - name: Cypress with Typescript
+        working-directory: examples/typescript
         run: |
-          cd examples/typescript
+          npm ci
           saucectl run
 
   allure-plugin:

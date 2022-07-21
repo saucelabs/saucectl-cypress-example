@@ -43,6 +43,5 @@ artifacts:
     directory: ./artifacts/
 
 npm:
-  registry: https://registry.npmjs.org
-  packages:
-    "typescript": "4.2.4"
+  dependencies:
+    - typescript
