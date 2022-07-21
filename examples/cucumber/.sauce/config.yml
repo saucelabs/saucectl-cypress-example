@@ -38,7 +38,7 @@ artifacts:
 # Any additional dependencies need to be configured here so that they are installed on demand.
 # Install only what you truly need to get your tests running, as installing dependencies takes time.
 npm:
-  packages:
-    "@badeball/cypress-cucumber-preprocessor": "^11.2.0"
-    "@cypress/webpack-preprocessor": "^5.12.0"
-    "webpack": "^5.73.0"
+  dependencies:
+    - "@badeball/cypress-cucumber-preprocessor"
+    - "@cypress/webpack-preprocessor"
+    - "webpack"
