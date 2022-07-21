@@ -28,7 +28,7 @@ suites:
     mode: sauce
     browser: "chrome"
     shard: spec
-    platformName: "Windows 10"
+    platformName: "Windows 11"
     config:
       testFiles: [ "**/*.*" ]
       env:

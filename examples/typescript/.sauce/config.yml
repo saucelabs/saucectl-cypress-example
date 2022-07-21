@@ -6,7 +6,6 @@ sauce:
   region: us-west-1
   concurrency: 2 # Controls how many suites are executed at the same time.
   metadata:
-    name: saucectl cypress example
     tags:
       - e2e
       - release team
@@ -23,7 +22,7 @@ rootDir: ./
 suites:
   - name: "Chrome using global mode setting" # Since the suite doesn't specify the `mode`, it'll inherit the mode specified via `defaults.mode` (see line number 3 and 4 of this config file).
     browser: "chrome"
-    platformName: "Windows 10" # Only relevant when running a test against the sauce cloud mode.
+    platformName: "Windows 11" # Only relevant when running a test against the sauce cloud mode.
     screenResolution: "1920x1080"  # (optional) Only relevant when running a test against the sauce cloud mode.
     shard: spec
     config:

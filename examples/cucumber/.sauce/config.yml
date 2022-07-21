@@ -22,7 +22,7 @@ rootDir: ./
 suites:
   - name: "Chrome"
     browser: "chrome"
-    platformName: "Windows 10"
+    platformName: "Windows 11"
     config:
       testFiles: [ "**/*.feature" ] # Cypress native glob support.
 
