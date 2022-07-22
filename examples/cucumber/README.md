@@ -19,15 +19,25 @@ npm install -g saucectl
 saucectl configure
 ```
 
+## Install Local NPM Dependencies
+
+Run the following command inside the `examples/cucumber` folder :rocket:
+
+```bash
+npm install
+```
+
 ## Running The Examples
 
-Simply check out this repo, navigate into `examples/cucumber` and run the command below :rocket:
+Run the following command inside the `examples/cucumber` folder :rocket:
 
 ```bash
 saucectl run
 ```
 
 ### Running With Tags
+
+Run the following command inside the `examples/cucumber` folder :rocket:
 
 ```bash
 saucectl run --env "CYPRESS_TAGS=@smoke"
