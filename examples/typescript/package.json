@@ -1,0 +1,6 @@
+{
+  "name": "cypress-typescript-example",
+  "dependencies": {
+    "typescript": "^4.7.4"
+  }
+}

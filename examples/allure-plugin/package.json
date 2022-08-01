@@ -1,0 +1,6 @@
+{
+  "name": "saucectl-allure-example",
+  "dependencies": {
+    "@shelex/cypress-allure-plugin": "^2.28.0"
+  }
+}
