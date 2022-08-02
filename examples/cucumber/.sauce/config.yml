@@ -1,4 +1,4 @@
-apiVersion: v1alpha
+apiVersion: v1
 kind: cypress
 # https://docs.saucelabs.com/web-apps/automated-testing/cypress/yaml/
 defaults:
@@ -10,13 +10,13 @@ sauce:
     tags:
       - cucumber
       - example repo
-    build: Github Run $GITHUB_RUN_ID
+    # build: Github Run $GITHUB_RUN_ID
 docker:
   # Affects how test files are transferred to the docker container when using the docker mode.
   fileTransfer: copy # Choose between mount|copy.
 cypress:
-  version: 9.7.0 # See https://docs.saucelabs.com/web-apps/automated-testing/cypress/ for a list of supported versions.
-  configFile: "cypress.json"  # We determine related files based on the location of the config file.
+  version: 10.3.1 # See https://docs.saucelabs.com/web-apps/automated-testing/cypress/ for a list of supported versions.
+  configFile: "cypress.config.js"  # We determine related files based on the location of the config file.
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
 suites:
@@ -24,7 +24,7 @@ suites:
     browser: "chrome"
     platformName: "Windows 11"
     config:
-      testFiles: [ "**/*.feature" ] # Cypress native glob support.
+      specPattern: [ "cypress/e2e/**/*.feature" ] # Cypress native glob support.
 
 # Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
 artifacts:

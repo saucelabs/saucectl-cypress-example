@@ -1,4 +1,4 @@
-apiVersion: v1alpha
+apiVersion: v1
 kind: cypress
 defaults:
   mode: sauce
@@ -15,8 +15,8 @@ docker:
   # Affects how test files are transferred to the docker container when using the docker mode.
   fileTransfer: copy # Choose between mount|copy.
 cypress:
-  version: 9.7.0 # See https://docs.saucelabs.com/dev/cli/saucectl/#supported-frameworks-and-browsers for a list of supported versions.
-  configFile: "cypress.json"  # We determine related files based on the location of the config file.
+  version: 10.3.1 # See https://docs.saucelabs.com/dev/cli/saucectl/#supported-frameworks-and-browsers for a list of supported versions.
+  configFile: "cypress.config.js"
 
 #   reporters:
 #     - name: cypress-mochawesome-reporter
@@ -38,20 +38,20 @@ suites:
     screenResolution: "1920x1080"  # (optional) Only relevant when running a test against the sauce cloud mode.
     shard: spec # (optional) Allocate one VM per spec for a high degree of parallelism.
     config:
-      testFiles: [ "**/*.*" ] # Cypress native glob support.
+      specPattern: [ "cypress/e2e/**/*.*" ] # Cypress native glob support.
   # - name: "Firefox in docker"
   #   mode: docker
   #   browser: "firefox"
   #   shard: spec
   #   config:
-  #     testFiles: [ "**/*.*" ]
+  #     specPattern: [ "cypress/e2e/**/*.*" ]
   - name: "Firefox on Mac"
     mode: sauce
     browser: "firefox"
     shard: spec
     platformName: "macOS 12"
     config:
-      testFiles: [ "**/*.*" ]
+      specPattern: [ "cypress/e2e/**/*.*" ]
 
 # Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
 artifacts:
