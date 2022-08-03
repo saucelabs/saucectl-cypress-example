@@ -1,6 +1,8 @@
 # saucectl cypress example
 
-Example running saucectl with cypress.
+Example running saucectl with Cypress 9 and below.
+
+If you are looking for Cypress 10 and above, take a look at the [v1 branch](https://github.com/saucelabs/saucectl-cypress-example/tree/v1).
 
 **Note**: If all you want is to publish your cypress test results to Sauce Labs (but not run on Sauce Labs), please check out our [cypress reporting plugin](https://github.com/saucelabs/sauce-cypress-plugin)!
 
