@@ -10,8 +10,8 @@ jobs:
       - checkout
       - setup_remote_docker:
           version: 20.10.2
-      - run: cd v1alpha
-      - saucectl/saucectl-run
+      - saucectl/saucectl-run:
+          working-directory: v1alpha
   test-cypress-v1:
     docker:
       - image: cimg/node:lts
@@ -19,8 +19,8 @@ jobs:
       - checkout
       - setup_remote_docker:
           version: 20.10.2
-      - run: cd v1
-      - saucectl/saucectl-run
+      - saucectl/saucectl-run:
+          working-directory: v1
 
 workflows:
   version: 2
