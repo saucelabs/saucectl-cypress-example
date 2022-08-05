@@ -1,0 +1,105 @@
+name: saucectl cypress tests v1
+
+on:
+  pull_request:
+  push:
+    paths:
+      - "v1"
+    branches:
+      - main
+
+env:
+  SAUCE_USERNAME: ${{secrets.SAUCE_USERNAME}}
+  SAUCE_ACCESS_KEY: ${{secrets.SAUCE_ACCESS_KEY}}
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Saucectl RUN Docker and Cloud
+        uses: saucelabs/saucectl-run-action@v1
+        with:
+          skip-run: true
+          testing-environment: ""
+          concurrency: 10
+
+      - run: saucectl run
+        working-directory: v1
+
+  cucumber:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install saucectl
+        uses: saucelabs/saucectl-run-action@v1
+        with:
+          skip-run: true
+          testing-environment: ""
+          concurrency: 10
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+          cache-dependency-path: v1/examples/cucumber/package-lock.json
+
+      - name: Cypress with Cucumber
+        working-directory: v1/examples/cucumber
+        run: |
+          npm ci
+          saucectl run
+
+  typescript:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install saucectl
+        uses: saucelabs/saucectl-run-action@v1
+        with:
+          skip-run: true
+          testing-environment: ""
+          concurrency: 10
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+          cache-dependency-path: v1/examples/typescript/package-lock.json
+
+      - name: Cypress with Typescript
+        working-directory: v1/examples/typescript
+        run: |
+          npm ci
+          saucectl run
+
+  allure-plugin:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install saucectl
+        uses: saucelabs/saucectl-run-action@v1
+        with:
+          skip-run: true
+          testing-environment: ""
+          concurrency: 10
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+          cache-dependency-path: v1/examples/allure-plugin/package-lock.json
+
+      - name: Cypress with Allure Plugin
+        working-directory: v1/examples/allure-plugin
+        run: |
+          npm ci
+          saucectl run

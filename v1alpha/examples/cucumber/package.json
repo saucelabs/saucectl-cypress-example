@@ -1,0 +1,22 @@
+{
+  "name": "cypress-cucumber-example",
+  "version": "1.0.0",
+  "description": "Example running saucectl with cypress + cucumber.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^11.2.0",
+    "cypress": "^9.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.5",
+    "@babel/preset-env": "^7.18.2",
+    "@cypress/webpack-preprocessor": "^5.12.0",
+    "babel-loader": "^8.2.5",
+    "webpack": "^5.73.0"
+  }
+}

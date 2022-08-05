@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: cypress
+defaults:
+  mode: sauce
+sauce:
+  region: us-west-1
+  concurrency: 2 # Controls how many suites are executed at the same time.
+  metadata:
+    tags:
+      - e2e
+      - release team
+      - other tag
+    build: Github Run $GITHUB_RUN_ID
+docker:
+  # Affects how test files are transferred to the docker container when using the docker mode.
+  fileTransfer: copy # Choose between mount|copy.
+cypress:
+  version: 10.3.1 # See https://docs.saucelabs.com/dev/cli/saucectl/#supported-frameworks-and-browsers for a list of supported versions.
+  configFile: "cypress.config.js"
+# Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
+rootDir: ./
+suites:
+  - name: "Chrome using global mode setting" # Since the suite doesn't specify the `mode`, it'll inherit the mode specified via `defaults.mode` (see line number 3 and 4 of this config file).
+    browser: "chrome"
+    platformName: "Windows 11" # Only relevant when running a test against the sauce cloud mode.
+    screenResolution: "1920x1080"  # (optional) Only relevant when running a test against the sauce cloud mode.
+    shard: spec
+    config:
+      specPattern: [ "cypress/e2e/**/*.*" ] # Cypress native glob support.
+  # - name: "Firefox in docker"
+  #   mode: docker
+  #   browser: "firefox"
+  #   shard: spec
+  #   config:
+  #     specPattern: [ "cypress/e2e/**/*.*" ]
+
+# Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
+artifacts:
+  download:
+    when: always
+    match:
+      - console.log
+    directory: ./artifacts/
+
+# https://docs.saucelabs.com/web-apps/automated-testing/cypress/yaml/#npm
+# Any additional dependencies need to be configured here so that they are packaged on demand.
+# These dependencies are picked up from the node_modules folder, so they need to be already installed locally.
+# Select only what you truly need to get your tests running, as installing dependencies takes time.
+npm:
+  dependencies:
+    - typescript

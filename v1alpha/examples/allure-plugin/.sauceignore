@@ -1,0 +1,4 @@
+/artifacts/
+cypress/videos/
+cypress/results/
+cypress/screenshots/
