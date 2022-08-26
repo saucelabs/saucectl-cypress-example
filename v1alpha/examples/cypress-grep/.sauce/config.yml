@@ -1,0 +1,38 @@
+apiVersion: v1alpha
+kind: cypress
+defaults:
+  mode: sauce
+sauce:
+  region: us-west-1
+  concurrency: 10 # Controls how many suites are executed at the same time.
+  metadata:
+    tags:
+      - e2e
+      - release team
+      - other tag
+    build: Github Run $GITHUB_RUN_ID
+cypress:
+  version: 9.7.0 # See https://docs.saucelabs.com/dev/cli/saucectl/#supported-frameworks-and-browsers for a list of supported versions.
+  configFile: "cypress.json"  # We determine related files based on the location of the config file.
+
+rootDir: ./
+suites:
+  - name: "Chrome using global mode setting" # Since the suite doesn't specify the `mode`, it'll inherit the mode specified via `defaults.mode` (see line number 3 and 4 of this config file).
+    browser: "chrome"
+    platformName: "Windows 11" # Only relevant when running a test against the sauce cloud mode.
+    screenResolution: "1920x1080"  # (optional) Only relevant when running a test against the sauce cloud mode.
+    config:
+      env:
+        grepTags: "@smoke"
+      testFiles: [ "**/*.*" ] # Cypress native glob support.
+
+# Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
+artifacts:
+  download:
+    when: always
+    match:
+      - console.log
+    directory: ./artifacts/
+npm:
+  dependencies:
+    - cypress-grep
