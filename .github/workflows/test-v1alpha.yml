@@ -103,3 +103,28 @@ jobs:
         run: |
           npm ci
           saucectl run
+  cypress-grep:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install saucectl
+        uses: saucelabs/saucectl-run-action@v1
+        with:
+          skip-run: true
+          testing-environment: ""
+          concurrency: 10
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+          cache-dependency-path: v1alpha/examples/cypress-grep/package-lock.json
+
+      - name: Cypress with Cypress Grep
+        working-directory: v1alpha/examples/cypress-grep
+        run: |
+          npm ci
+          saucectl run
+
