@@ -103,7 +103,7 @@ jobs:
         run: |
           npm ci
           saucectl run
-  allure-plugin:
+  cypress-grep:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
