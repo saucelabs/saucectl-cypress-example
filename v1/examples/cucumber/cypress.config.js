@@ -1,10 +1,12 @@
 const { defineConfig } = require('cypress')
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 const preprocessor = require('@badeball/cypress-cucumber-preprocessor');
 const webpack = require("@cypress/webpack-preprocessor");
 
 async function setupNodeEvents(on, config) {
   await preprocessor.addCucumberPreprocessorPlugin(on, config);
+  await allureWriter(on, config);
   on(
     "file:preprocessor",
     webpack({
