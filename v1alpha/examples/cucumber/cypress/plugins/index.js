@@ -14,12 +14,14 @@
 
 const preprocessor = require('@badeball/cypress-cucumber-preprocessor');
 const webpack = require("@cypress/webpack-preprocessor");
+const AllureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 /**
  * @type {Cypress.PluginConfig}
  */
 module.exports = async (on, config) => {
   await preprocessor.addCucumberPreprocessorPlugin(on, config);
+  await AllureWriter(on, config);
   on(
     "file:preprocessor",
     webpack({

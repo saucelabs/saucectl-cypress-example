@@ -26,12 +26,21 @@ suites:
     config:
       specPattern: [ "cypress/e2e/**/*.feature" ] # Cypress native glob support.
 
+#  - name: "Cucumber w/ allure-plugin"
+#    browser: "chrome"
+#    platformName: "Windows 11"
+#    config:
+#      env:
+#        allure: true
+#        allureResultsPath: __assets__/allure-results/
+#      specPattern: [ "cypress/e2e/**/*.feature" ] # Cypress native glob support.
+
 # Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
 artifacts:
   download:
-    when: never
+    when: always
     match:
-      - console.log
+      - "*"
     directory: ./artifacts/
 
 # https://docs.saucelabs.com/web-apps/automated-testing/cypress/yaml/#npm
@@ -43,3 +52,4 @@ npm:
     - "@badeball/cypress-cucumber-preprocessor"
     - "@cypress/webpack-preprocessor"
     - "webpack"
+    - "@shelex/cypress-allure-plugin" # allure-plugin dependency
