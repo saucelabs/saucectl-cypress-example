@@ -1,0 +1,6 @@
+tasks:
+  - command: |
+      cd v1
+      echo $val
+      npm i -g saucectl
+      saucectl run
