@@ -10,12 +10,11 @@ sauce:
       - e2e
       - release team
       - other tag
-    build: Github Run $GITHUB_RUN_ID
 docker:
   # Affects how test files are transferred to the docker container when using the docker mode.
   fileTransfer: copy # Choose between mount|copy.
 cypress:
-  version: 10.7.0 # See https://docs.saucelabs.com/testrunner-toolkit for a list of supported versions.
+  version: package.json # See https://docs.saucelabs.com/testrunner-toolkit for a list of supported versions.
   configFile: "cypress.config.js"
 
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
