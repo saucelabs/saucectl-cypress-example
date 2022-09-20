@@ -1,6 +1,9 @@
 tasks:
   - command: |
       cd v1
-      echo $val
       npm i -g saucectl
-      saucectl run
+      if [[ -z "$BUILD" ]]; then
+        saucectl run
+      else
+        saucectl run --build $BUILD
+      fi
