@@ -1,6 +1,13 @@
 tasks:
   - command: |
       cd v1
-      echo $val
       npm i -g saucectl
-      saucectl run
+      if [[ -z "$BUILD" ]] && [[ -z "$REGION" ]]; then
+        saucectl run
+      elif [[ -z "$BUILD" ]]; then
+        saucectl run --region $REGION
+      elif [[ -z "$REGION" ]]; then
+        saucectl run --build $BUILD
+      else
+        saucectl run --region $REGION --build $BUILD
+      fi
