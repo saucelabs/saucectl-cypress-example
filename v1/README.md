@@ -27,8 +27,16 @@ Simply check out this repo and run the command below :rocket:
 
 3 test suites are being triggered in `docker` and `sauce` mode. `saucectl` will run the suites marked as `docker` mode firstly and then run the suites which are marked as `sauce` mode.
 
+Run tests in US
 ```bash
-saucectl run
+npm install
+npm run test.sauce.us
+```
+
+Run tests in EU
+```bash
+npm install
+npm run test.sauce.eu
 ```
 
 ![running example](assets/cypress-example.gif)

@@ -2,3 +2,5 @@ node_modules/
 artifacts/
 sauce-app-payload*
 cypress/videos/
+*/cypress/videos/**
+*/cypress/screenshots/**
