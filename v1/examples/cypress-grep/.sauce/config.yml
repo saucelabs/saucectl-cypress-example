@@ -30,6 +30,7 @@ suites:
   - name: "Firefox on Mac"
     mode: sauce
     browser: "firefox"
+    browserVersion: "104"
     platformName: "macOS 12"
     config:
       specPattern: [ "cypress/e2e/**/*.*" ]
