@@ -48,6 +48,7 @@ suites:
   - name: "Firefox on Mac"
     mode: sauce
     browser: "firefox"
+    browserVersion: "104"
     shard: spec
     platformName: "macOS 12"
     config:
