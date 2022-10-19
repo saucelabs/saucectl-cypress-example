@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: cypress
+defaults:
+  mode: sauce
+
+sauce:
+  region: us-west-1
+  concurrency: 2
+  metadata:
+    tags:
+      - cypress-example
+
+cypress:
+  version: 10.10.0
+  configFile: "cypress.config.js"
+
+rootDir: ./
+
+suites:
+  - name: (Experimental) webkit test
+    browser: webkit
+    platformName: Windows 11
+    shard: spec
+    config:
+      specPattern: [ "cypress/e2e/**/*.*" ]
