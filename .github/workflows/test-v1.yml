@@ -86,7 +86,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install saucectl
-        uses: saucelabs/saucectl-run-action@v1
+        uses: saucelabs/saucectl-run-action@v2
         with:
           skip-run: true
           testing-environment: ""
@@ -110,7 +110,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install saucectl
-        uses: saucelabs/saucectl-run-action@v1
+        uses: saucelabs/saucectl-run-action@v2
         with:
           skip-run: true
           testing-environment: ""
@@ -127,3 +127,15 @@ jobs:
         run: |
           npm ci
           saucectl run
+
+  webkit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install saucectl
+        uses: saucelabs/saucectl-run-action@v2
+        with:
+          working-directory: ./v1/examples/webkit
+          testing-environment: sauce
