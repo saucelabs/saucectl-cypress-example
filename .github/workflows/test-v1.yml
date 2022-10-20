@@ -138,4 +138,3 @@ jobs:
         uses: saucelabs/saucectl-run-action@v2
         with:
           working-directory: ./v1/examples/webkit
-          testing-environment: sauce
