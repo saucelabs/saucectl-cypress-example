@@ -72,7 +72,7 @@ suites:
     browser: chrome
     platformName: Windows 11
     shard: spec
-    shardGrepEnabled: true     
+    shardGrepEnabled: true  # <--
     config:
       specPattern: [ "cypress/e2e/**/*.*" ]
       env:
