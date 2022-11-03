@@ -1,6 +1,6 @@
 # saucectl cypress & cypress-grep example
 
-Example running saucectl with cypress & cypress-grep.
+Example running saucectl with cypress & @cypress/grep.
 
 ## What You'll Need
 
@@ -41,12 +41,12 @@ Run the following command inside the `examples/cypress-grep` foler :rocket:
 
 Filtering tests by tags
 ```bash
-saucectl run --env "CYPRESS_grepTags=@mytags"
+saucectl run --env "CYPRESS_grepTags=@smoke"
 ```
 
 Filtering tests by test title
 ```bash
-saucectl run --env "CYPRESS_grep=hello"
+saucectl run --env "CYPRESS_grep=type"
 ```
 
 ## The Config

@@ -31,24 +31,18 @@ suites:
       env:
         grep: "DOM"
 
-  - name: "Filter sharded suite by test title"
+  - name: "Filter sharded suite"
     browser: chrome
     platformName: Windows 11
     shard: spec
+    # When sharding with @cypress/grep, shardGrepEnabled allows saucectl to filter
+    # spec files according to the configured @cypress/grep expressions before test execution.
+    # This is similar behaviour to the `grepFilterSpecs` option in @cypress/grep
+    shardGrepEnabled: true     
     config:
       specPattern: [ "cypress/e2e/**/*.*" ]
       env:
-        grep: "DOM"
-
-  - name: "Filter sharded suite by test tags"
-    browser: chrome
-    platformName: Windows 11
-    shard: spec
-    shardGrepEnabled: true
-    config:
-      specPattern: [ "cypress/e2e/**/*.*" ]
-      env:
-        grepTags: "-@smoke"
+        grepTags: "@smoke"
 
 artifacts:
   download:
