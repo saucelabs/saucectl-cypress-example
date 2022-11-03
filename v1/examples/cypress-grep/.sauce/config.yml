@@ -4,40 +4,52 @@ defaults:
   mode: sauce
 sauce:
   region: us-west-1
-  concurrency: 10 # Controls how many suites are executed at the same time.
+  concurrency: 5
   metadata:
     tags:
-      - e2e
-      - release team
-      - other tag
+      - saucectl-cypress-example
+      - cypress-grep-example
     build: Github Run $GITHUB_RUN_ID
-docker:
-  # Affects how test files are transferred to the docker container when using the docker mode.
-  fileTransfer: copy # Choose between mount|copy.
 cypress:
-  version: 10.10.0 # See https://docs.saucelabs.com/dev/cli/saucectl/#supported-frameworks-and-browsers for a list of supported versions.
+  version: 10.10.0
   configFile: "cypress.config.js"
 rootDir: ./
 suites:
-  - name: "Chrome using global mode setting" # Since the suite doesn't specify the `mode`, it'll inherit the mode specified via `defaults.mode` (see line number 3 and 4 of this config file).
-    browser: "chrome"
-    platformName: "Windows 11" # Only relevant when running a test against the sauce cloud mode.
-    screenResolution: "1920x1080"  # (optional) Only relevant when running a test against the sauce cloud mode.
-    config:
-      specPattern: [ "cypress/e2e/**/*.*" ] # Cypress native glob support.
-      env:
-        grepTags: "@smoke"
-  - name: "Firefox on Mac"
-    mode: sauce
-    browser: "firefox"
-    browserVersion: "104"
-    platformName: "macOS 12"
+  - name: "Filter by tag"
+    browser: chrome
+    platformName: Windows 11
     config:
       specPattern: [ "cypress/e2e/**/*.*" ]
       env:
         grepTags: "@smoke"
 
-# Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
+  - name: "Filter by test title"
+    browser: chrome
+    platformName: Windows 11
+    config:
+      specPattern: [ "cypress/e2e/**/*.*" ]
+      env:
+        grep: "DOM"
+
+  - name: "Filter sharded suite by test title"
+    browser: chrome
+    platformName: Windows 11
+    shard: spec
+    config:
+      specPattern: [ "cypress/e2e/**/*.*" ]
+      env:
+        grep: "DOM"
+
+  - name: "Filter sharded suite by test tags"
+    browser: chrome
+    platformName: Windows 11
+    shard: spec
+    shardGrepEnabled: true
+    config:
+      specPattern: [ "cypress/e2e/**/*.*" ]
+      env:
+        grepTags: "-@smoke"
+
 artifacts:
   download:
     when: always
