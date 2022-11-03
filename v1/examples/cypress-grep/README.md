@@ -36,7 +36,7 @@ saucectl run --select-suite "Filter by test title"
 
 ## Configuration
 
-To use @cypress/grep with saucectl, there are two important configuration options in the config file to make note of.
+To use @cypress/grep with saucectl, there are a few important configuration options in the config file to make note of.
 
 ### Specifying cypress env vars
 
