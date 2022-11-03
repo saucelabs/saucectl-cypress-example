@@ -93,4 +93,4 @@ For best practices on managing your npm dependencies, see [the docs](https://doc
 
 ### Full config :eyes:
 
-Explore the [full config file](.sauce/config.yml) and the [documentation](https://docs.saucelabs.com/web-apps/automated-testing/cypress/yaml/v1/) for more details.
+Explore the [full config file](.sauce/config.yml) for this example and the [documentation](https://docs.saucelabs.com/web-apps/automated-testing/cypress/yaml/v1/) for more details.
