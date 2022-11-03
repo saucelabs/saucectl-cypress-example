@@ -64,7 +64,7 @@ See [the docs](https://docs.saucelabs.com/web-apps/automated-testing/cypress/yam
 
 ### Filtering shards with @cypress/grep
 
-If you want to configure your suite to use [sharding](https://docs.saucelabs.com/web-apps/automated-testing/cypress/yaml/v1/#shard), you can optionally use the `shardGrepEnabled` feature to have saucectl filter specs according to the grep arguments before test execution time. This is similar to ghow the `grepFilterSpecs` option works in @cypress/grep.
+If you want to configure your suite to use [sharding](https://docs.saucelabs.com/web-apps/automated-testing/cypress/yaml/v1/#shard), you can optionally use the `shardGrepEnabled` feature to have saucectl filter specs according to the grep arguments before test execution time. This is similar to how the `grepFilterSpecs` option works in @cypress/grep.
 
 ```yaml
 suites:
