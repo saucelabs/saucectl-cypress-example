@@ -46,4 +46,4 @@ artifacts:
     directory: ./artifacts/
 npm:
   dependencies:
-    - cypress-grep
+    - "@cypress/grep"
