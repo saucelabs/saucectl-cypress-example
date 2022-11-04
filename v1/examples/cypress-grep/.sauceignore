@@ -1,0 +1,14 @@
+# This file instructs saucectl to not package any files mentioned here.
+cypress/videos/
+cypress/results/
+cypress/screenshots/
+
+.DS_Store
+.hg/
+.vscode/
+.idea/
+.gitignore
+.hgignore
+.gitlab-ci.yml
+.npmrc
+*.gif
