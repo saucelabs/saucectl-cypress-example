@@ -38,6 +38,9 @@ artifacts:
     when: always
     match:
       - console.log
+      - '*-result.json'
+      - '*-container.json'
+
     directory: ./artifacts/
 
 # https://docs.saucelabs.com/web-apps/automated-testing/cypress/yaml/#npm
