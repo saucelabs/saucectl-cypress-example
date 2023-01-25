@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Saucectl RUN Docker and Cloud
-        uses: saucelabs/saucectl-run-action@v2
+        uses: saucelabs/saucectl-run-action@DEVX-2092-support-github_token
         with:
           skip-run: true
           testing-environment: ""
