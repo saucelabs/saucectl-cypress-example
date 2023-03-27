@@ -7,6 +7,8 @@ Example running saucectl with cypress & [cypress allure plugin](https://github.c
 The steps below illustrate one of the quickest ways to get set up. If you'd like a more in-depth guide, please check out
 our [documentation](https://docs.saucelabs.com/testrunner-toolkit/installation).
 
+_If you're using VS Code, you can try out [Runme](https://marketplace.visualstudio.com/items?itemName=stateful.runme) plugin to run following commands inside of VS Code._
+
 ### Install `saucectl`
 
 ```shell
