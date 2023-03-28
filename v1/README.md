@@ -9,6 +9,8 @@ Example running saucectl with Cypress 10 and above.
 The steps below illustrate one of the quickest ways to get set up. If you'd like a more in-depth guide, please check out
 our [documentation](https://docs.saucelabs.com/dev/cli/saucectl/#installing-saucectl).
 
+_If you're using VS Code, you can use [Runme](https://marketplace.visualstudio.com/items?itemName=stateful.runme) to run the following commands directly from VS Code._
+
 ### Install `saucectl`
 
 ```shell
