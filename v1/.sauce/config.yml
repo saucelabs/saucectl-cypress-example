@@ -27,7 +27,7 @@ cypress:
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
 suites:
-  - name: "Chrome Windows"
+  - name: "Chrome on Windows"
     browser: "chrome"
     platformName: "Windows 11"
     screenResolution: "1920x1080"  # (optional)

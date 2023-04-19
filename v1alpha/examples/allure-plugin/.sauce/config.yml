@@ -16,7 +16,7 @@ cypress:
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
 suites:
-  - name: "Chrome in sauce"
+  - name: "Chrome on Windows"
     browser: "chrome"
     shard: spec
     platformName: "Windows 11"
