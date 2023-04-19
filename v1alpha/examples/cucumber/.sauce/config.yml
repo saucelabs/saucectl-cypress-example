@@ -1,8 +1,6 @@
 apiVersion: v1alpha
 kind: cypress
 # https://docs.saucelabs.com/web-apps/automated-testing/cypress/yaml/v1alpha/
-defaults:
-  mode: sauce
 sauce:
   region: us-west-1
   concurrency: 2 # Controls how many suites are executed at the same time.
@@ -11,9 +9,6 @@ sauce:
       - cucumber
       - example repo
     build: Github Run $GITHUB_RUN_ID
-docker:
-  # Affects how test files are transferred to the docker container when using the docker mode.
-  fileTransfer: copy # Choose between mount|copy.
 cypress:
   version: 9.7.0 # See https://docs.saucelabs.com/web-apps/automated-testing/cypress/#supported-testing-platforms for a list of supported versions.
   configFile: "cypress.json"  # We determine related files based on the location of the config file.
@@ -34,7 +29,7 @@ suites:
 #        allureResultsPath: __assets__/allure_results/
 #      testFiles: [ "**/*.feature" ] # Cypress native glob support.
 #
-# Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
+# Controls what artifacts to fetch when the suites have finished.
 artifacts:
   download:
     when: always

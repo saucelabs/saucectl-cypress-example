@@ -8,8 +8,6 @@ jobs:
       - image: cimg/node:lts
     steps:
       - checkout
-      - setup_remote_docker:
-          version: 20.10.2
       - saucectl/saucectl-run:
           working-directory: v1alpha
   test-cypress-v1:
@@ -17,8 +15,6 @@ jobs:
       - image: cimg/node:lts
     steps:
       - checkout
-      - setup_remote_docker:
-          version: 20.10.2
       - saucectl/saucectl-run:
           working-directory: v1
 
