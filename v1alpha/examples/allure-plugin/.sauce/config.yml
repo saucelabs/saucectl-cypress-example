@@ -1,7 +1,5 @@
 apiVersion: v1alpha
 kind: cypress
-defaults:
-  mode: sauce
 sauce:
   region: us-west-1
   concurrency: 10 # Controls how many suites are executed at the same time.
@@ -11,9 +9,6 @@ sauce:
       - release team
       - other tag
     build: Github Run $GITHUB_RUN_ID
-docker:
-  # Affects how test files are transferred to the docker container when using the docker mode.
-  fileTransfer: copy # Choose between mount|copy.
 cypress:
   version: 9.7.0 # See https://docs.saucelabs.com/web-apps/automated-testing/cypress/#supported-testing-platforms for a list of supported versions.
   configFile: "cypress.json"  # We determine related files based on the location of the config file.
@@ -21,8 +16,7 @@ cypress:
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
 suites:
-  - name: "Chrome in sauce"
-    mode: sauce
+  - name: "Chrome on Windows"
     browser: "chrome"
     shard: spec
     platformName: "Windows 11"
@@ -32,7 +26,7 @@ suites:
         allure: true
         allureResultsPath: __assets__/allure-results/
 
-# Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
+# Controls what artifacts to fetch when the suites have finished.
 artifacts:
   download:
     when: always
