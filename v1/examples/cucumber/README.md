@@ -52,7 +52,7 @@ Specify [package.json](./package.json) and enable JSON report as follows. To get
 ```
 "cypress-cucumber-preprocessor": {
   "json": {
-    "enabled": true
+    "enabled": true,
     "output": "__assets__/<MY_CUCUMBER_REPORT>.json"
   }
 }
