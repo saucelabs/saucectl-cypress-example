@@ -15,9 +15,9 @@ cypress:
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
 suites:
-  - name: "Chrome"
+  - name: "Chrome - macOS"
     browser: "chrome"
-    platformName: "Windows 11"
+    platformName: "macOS 12"
     config:
       specPattern: [ "cypress/e2e/**/*.feature" ] # Cypress native glob support.
 
@@ -48,3 +48,4 @@ npm:
     - "@cypress/webpack-preprocessor"
     - "webpack"
     - "@shelex/cypress-allure-plugin" # allure-plugin dependency
+    - esbuild
