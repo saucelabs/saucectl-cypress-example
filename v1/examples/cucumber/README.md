@@ -48,6 +48,7 @@ saucectl run --env "CYPRESS_TAGS=@smoke"
 ### Generating JSON report
 
 Specify [.cypress-cucumber-preprocessorrc.json](./.cypress-cucumber-preprocessorrc.json) and enable JSON report as follows. To get the JSON report, you should set the output file under `__assets__`.
+Check out [here](https://github.com/badeball/cypress-cucumber-preprocessor/blob/master/docs/json-report.md) for more details.
 
 ```
 "json": {
