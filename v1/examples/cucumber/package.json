@@ -19,11 +19,5 @@
     "@shelex/cypress-allure-plugin": "^2.28.5",
     "babel-loader": "^8.2.5",
     "esbuild": "0.17.18"
-  },
-  "cypress-cucumber-preprocessor": {
-    "json": {
-      "enabled": true,
-      "output": "__assets__/cucumber_report.json"
-    }
   }
 }
