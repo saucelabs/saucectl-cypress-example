@@ -15,4 +15,5 @@ cypress/screenshots/
 .npmrc
 *.gif
 package.json
+node_modules
 
