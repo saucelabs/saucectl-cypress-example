@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
-const webpack = require("@cypress/webpack-preprocessor");
+const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
 const preprocessor = require("@badeball/cypress-cucumber-preprocessor");
+const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esbuild");
 const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 async function setupNodeEvents(on, config) {
@@ -10,34 +11,8 @@ async function setupNodeEvents(on, config) {
 
   on(
     "file:preprocessor",
-    webpack({
-      webpackOptions: {
-        resolve: {
-          extensions: [".ts", ".js"],
-        },
-        module: {
-          rules: [
-            {
-              test: /\.ts$/,
-              exclude: [/node_modules/],
-              use: [
-                {
-                  loader: "ts-loader",
-                },
-              ],
-            },
-            {
-              test: /\.feature$/,
-              use: [
-                {
-                  loader: "@badeball/cypress-cucumber-preprocessor/webpack",
-                  options: config,
-                },
-              ],
-            },
-          ],
-        },
-      },
+    createBundler({
+      plugins: [createEsbuildPlugin.default(config)],
     })
   );
 

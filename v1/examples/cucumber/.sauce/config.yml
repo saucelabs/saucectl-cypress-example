@@ -45,7 +45,6 @@ artifacts:
 npm:
   dependencies:
     - "@badeball/cypress-cucumber-preprocessor"
-    - "@cypress/webpack-preprocessor"
-    - "webpack"
     - "@shelex/cypress-allure-plugin" # allure-plugin dependency
+    - "@bahmutov/cypress-esbuild-preprocessor"
     - esbuild
