@@ -1,0 +1,10 @@
+{
+  "json": {
+    "enabled": true,
+    "output": "__assets__/cucumber_report.json"
+  },
+  "html": {
+    "enabled": true,
+    "output": "__assets__/cucumber_report.html"
+  }
+}

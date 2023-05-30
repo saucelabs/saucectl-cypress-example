@@ -45,6 +45,42 @@ Run the following command inside the `examples/cucumber` folder :rocket:
 saucectl run --env "CYPRESS_TAGS=@smoke"
 ```
 
+### Generating JSON report
+
+Specify [.cypress-cucumber-preprocessorrc.json](./.cypress-cucumber-preprocessorrc.json) and enable JSON report as follows. To get the JSON report, you should set the output file under `__assets__`.
+Check out [here](https://github.com/badeball/cypress-cucumber-preprocessor/blob/master/docs/json-report.md) for more details.
+
+```
+"json": {
+  "enabled": true,
+  "output": "__assets__/<MY_CUCUMBER_REPORT>.json"
+}
+```
+
+### Generating HTML report
+
+Specify [.cypress-cucumber-preprocessorrc.json](./.cypress-cucumber-preprocessorrc.json) and enable HTML report as follows. To get the report, you should set the output file under `__assets__`.
+
+```
+"html": {
+  "enabled": true,
+  "output": "__assets__/<MY_CUCUMBER_REPORT>.html"
+}
+```
+
+The HTML report is not displayed on the web UI but can be downloaded by configuring the `artifacts` setting in [.sauce/config.yml](.sauce/config.yml).
+
+```
+# Controls what artifacts to fetch when the suites have finished.
+artifacts:
+  download:
+    when: always
+    match:
+      - "*.html"
+    directory: ./artifacts/
+```
+
 ## The Config
 
 [Follow me](.sauce/config.yml) if you'd like to see how saucectl is configured for this example.
+
