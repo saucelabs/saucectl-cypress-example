@@ -68,7 +68,7 @@ Specify [.cypress-cucumber-preprocessorrc.json](./.cypress-cucumber-preprocessor
 }
 ```
 
-The HTML report is not displayed on the web UI but can be downloaded by configuring the `artifacts` setting.
+The HTML report is not displayed on the web UI but can be downloaded by configuring the `artifacts` setting in [.sauce/config.yml](.sauce/config.yml).
 
 ```
 # Controls what artifacts to fetch when the suites have finished.
