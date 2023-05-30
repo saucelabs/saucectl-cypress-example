@@ -47,17 +47,16 @@ saucectl run --env "CYPRESS_TAGS=@smoke"
 
 ### Generating JSON report
 
-Specify [package.json](./package.json) and enable JSON report as follows. To get the JSON report, you should set the output file under `__assets__`.
+Specify [.cypress-cucumber-preprocessorrc.json](./.cypress-cucumber-preprocessorrc.json) and enable JSON report as follows. To get the JSON report, you should set the output file under `__assets__`.
 
 ```
-"cypress-cucumber-preprocessor": {
-  "json": {
-    "enabled": true,
-    "output": "__assets__/<MY_CUCUMBER_REPORT>.json"
-  }
+"json": {
+  "enabled": true,
+  "output": "__assets__/<MY_CUCUMBER_REPORT>.json"
 }
 ```
 
 ## The Config
 
 [Follow me](.sauce/config.yml) if you'd like to see how saucectl is configured for this example.
+
