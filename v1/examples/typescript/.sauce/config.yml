@@ -10,7 +10,7 @@ sauce:
       - other tag
     build: Github Run $GITHUB_RUN_ID
 cypress:
-  version: 12.11.0 # See https://docs.saucelabs.com/web-apps/automated-testing/cypress/#supported-testing-platforms for a list of supported versions.
+  version: 12.14.0 # See https://docs.saucelabs.com/web-apps/automated-testing/cypress/#supported-testing-platforms for a list of supported versions.
   configFile: "cypress.config.js"
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
