@@ -9,7 +9,7 @@ sauce:
       - cypress-example
 
 cypress:
-  version: 12.14.0
+  version: 12.17.2
   configFile: "cypress.config.js"
 
 rootDir: ./
