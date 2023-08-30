@@ -33,7 +33,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version-file: '.nvmrc'
           cache: 'npm'
           cache-dependency-path: v1alpha/examples/cucumber/package-lock.json
 
@@ -54,7 +54,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version-file: '.nvmrc'
           cache: 'npm'
           cache-dependency-path: v1alpha/examples/typescript/package-lock.json
 
@@ -75,7 +75,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version-file: '.nvmrc'
           cache: 'npm'
           cache-dependency-path: v1alpha/examples/allure-plugin/package-lock.json
 
@@ -97,7 +97,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version-file: '.nvmrc'
           cache: 'npm'
           cache-dependency-path: v1alpha/examples/cypress-grep/package-lock.json
 
