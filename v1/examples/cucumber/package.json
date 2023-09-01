@@ -9,8 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^17.2.0",
-    "cypress": "12.17.2"
+    "@badeball/cypress-cucumber-preprocessor": "^18.0.5",
+    "cypress": "13.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.5",
