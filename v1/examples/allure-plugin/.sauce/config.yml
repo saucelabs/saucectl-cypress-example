@@ -31,8 +31,9 @@ artifacts:
   download:
     when: always
     match:
-      - "*"
-    directory: ./artifacts/
+      - "*-result.json"
+      - "*-container.json"
+    directory: ./allure-results/
 
 # https://docs.saucelabs.com/web-apps/automated-testing/cypress/advanced/#including-node-dependencies
 # Any additional dependencies need to be configured here so that they are packaged on demand.
