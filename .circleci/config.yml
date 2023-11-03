@@ -3,13 +3,6 @@ orbs:
   saucectl: saucelabs/saucectl-run@3.0.0
 
 jobs:
-  test-cypress-v1alpha:
-    docker:
-      - image: cimg/node:lts
-    steps:
-      - checkout
-      - saucectl/saucectl-run:
-          working-directory: v1alpha
   test-cypress-v1:
     docker:
       - image: cimg/node:lts
@@ -22,5 +15,4 @@ workflows:
   version: 2
   default_workflow:
     jobs:
-      - test-cypress-v1alpha
       - test-cypress-v1
