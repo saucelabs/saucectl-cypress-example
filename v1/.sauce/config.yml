@@ -10,7 +10,7 @@ sauce:
       - other tag
     build: Github Run $GITHUB_RUN_ID
 cypress:
-  version: 13.3.0 # See https://docs.saucelabs.com/web-apps/automated-testing/cypress/#supported-testing-platforms for a list of supported versions.
+  version: 13.4.0 # See https://docs.saucelabs.com/web-apps/automated-testing/cypress/#supported-testing-platforms for a list of supported versions.
   configFile: "cypress.config.js"
 
 #   reporters:
