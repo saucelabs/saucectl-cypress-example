@@ -2,3 +2,5 @@ node_modules/
 artifacts/
 sauce-app-payload*
 cypress/videos/
+.DS_Store
+
