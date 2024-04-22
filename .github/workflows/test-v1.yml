@@ -91,6 +91,9 @@ jobs:
         with:
           working-directory: v1/examples/allure-plugin
 
+      - name: Verify allure artifacts exist
+        run: stat v1/examples/allure-plugin/artifacts/**/allure-results.zip
+
   cypress-grep:
     runs-on: ubuntu-latest
     steps:
