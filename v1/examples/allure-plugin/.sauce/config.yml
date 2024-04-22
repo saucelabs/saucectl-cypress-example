@@ -22,18 +22,16 @@ suites:
     platformName: "Windows 11"
     config:
       specPattern: [ "cypress/e2e/**/*.*" ]
-      env:
-        allure: true
-        allureResultsPath: __assets__/allure-results/
 
 # Controls what artifacts to fetch when the suites have finished.
 artifacts:
+  retain:
+    "./allure-results": allure-results.zip
   download:
-    when: always
     match:
-      - "*-result.json"
-      - "*-container.json"
-    directory: ./allure-results/
+      - allure-results.zip
+    directory: ./artifacts
+    when: always
 
 # https://docs.saucelabs.com/web-apps/automated-testing/cypress/advanced/#including-node-dependencies
 # Any additional dependencies need to be configured here so that they are packaged on demand.
@@ -41,4 +39,4 @@ artifacts:
 # Select only what you truly need to get your tests running, as installing dependencies takes time.
 npm:
   dependencies:
-    - "@shelex/cypress-allure-plugin"
+    - allure-cypress
