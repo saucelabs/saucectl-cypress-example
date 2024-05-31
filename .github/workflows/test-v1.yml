@@ -20,8 +20,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Saucectl RUN
-        uses: saucelabs/saucectl-run-action@v3
+      - name: Run saucectl
+        uses: saucelabs/saucectl-run-action@v4
         with:
           working-directory: v1
 
@@ -34,16 +34,16 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
+          node-version-file: ".nvmrc"
+          cache: "npm"
           cache-dependency-path: v1/examples/cucumber/package-lock.json
 
       - name: Install dependencies
         working-directory: v1/examples/cucumber
         run: npm ci
 
-      - name: Cypress with Cucumber
-        uses: saucelabs/saucectl-run-action@v3
+      - name: Run saucectl
+        uses: saucelabs/saucectl-run-action@v4
         with:
           working-directory: v1/examples/cucumber
 
@@ -56,16 +56,16 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
+          node-version-file: ".nvmrc"
+          cache: "npm"
           cache-dependency-path: v1/examples/typescript/package-lock.json
 
       - name: Install dependencies
         working-directory: v1/examples/typescript
         run: npm ci
 
-      - name: Cypress with Typescript
-        uses: saucelabs/saucectl-run-action@v3
+      - name: Run saucectl
+        uses: saucelabs/saucectl-run-action@v4
         with:
           working-directory: v1/examples/typescript
 
@@ -78,16 +78,16 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
+          node-version-file: ".nvmrc"
+          cache: "npm"
           cache-dependency-path: v1/examples/allure-plugin/package-lock.json
 
       - name: Install dependencies
         working-directory: v1/examples/allure-plugin
         run: npm ci
 
-      - name: Cypress with Allure Plugin
-        uses: saucelabs/saucectl-run-action@v3
+      - name: Run saucectl
+        uses: saucelabs/saucectl-run-action@v4
         with:
           working-directory: v1/examples/allure-plugin
 
@@ -103,16 +103,16 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
+          node-version-file: ".nvmrc"
+          cache: "npm"
           cache-dependency-path: v1/examples/cypress-grep/package-lock.json
 
       - name: Install dependencies
         working-directory: v1/examples/cypress-grep
         run: npm ci
 
-      - name: Cypress with Cypress Grep
-        uses: saucelabs/saucectl-run-action@v3
+      - name: Run saucectl
+        uses: saucelabs/saucectl-run-action@v4
         with:
           working-directory: v1/examples/cypress-grep
 
@@ -122,7 +122,32 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: saucectl run
-        uses: saucelabs/saucectl-run-action@v3
+      - name: Run saucectl
+        uses: saucelabs/saucectl-run-action@v4
         with:
           working-directory: ./v1/examples/webkit
+
+  multi-reporter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+          cache-dependency-path: v1/examples/multi-reporter/package-lock.json
+
+      - name: Install dependencies
+        working-directory: v1/examples/multi-reporter
+        run: npm ci
+
+      - name: Run saucectl
+        uses: saucelabs/saucectl-run-action@v4
+        with:
+          working-directory: v1/examples/multi-reporter
+
+      - name: Verify mochawesome artifacts exist
+        run: stat v1/examples/multi-reporter/artifacts/**/index.html
