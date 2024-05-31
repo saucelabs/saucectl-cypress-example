@@ -22,6 +22,7 @@ cypress:
         embeddedScreenshots: true
         inlineAssets: true
         saveAllAttempts: false
+        saveJson: false
         ignoreVideos: true # Must be ignored, the plugin will fail otherwise.
 
 npm:
