@@ -9,12 +9,28 @@ sauce:
       - release team
       - other tag
     build: Github Run $GITHUB_RUN_ID
+
 cypress:
-  version: 13.10.0 # See https://docs.saucelabs.com/web-apps/automated-testing/cypress/#supported-testing-platforms for a list of supported versions.
+  version: 13.10.0
   configFile: "cypress.config.js"
+  reporters:
+    - name: cypress-mochawesome-reporter
+      options:
+        reportDir: "__assets__/cypress/report"
+        charts: true
+        reportPageTitle: "custom-title"
+        embeddedScreenshots: true
+        inlineAssets: true
+        saveAllAttempts: false
+        ignoreVideos: true # Must be ignored, the plugin will fail otherwise.
+
+npm:
+  dependencies:
+    - "cypress-mochawesome-reporter"
 
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
+
 suites:
   - name: "Chrome on Windows"
     browser: "chrome"
@@ -27,14 +43,14 @@ suites:
     browser: "firefox"
     browserVersion: "latest"
     shard: spec
-    platformName: "macOS 12"
+    platformName: "macOS 13"
     config:
       specPattern: ["cypress/e2e/**/*.*"]
-
 # Controls what artifacts to fetch when the suites have finished.
-artifacts:
-  download:
-    when: always
-    match:
-      - console.log
-    directory: ./artifacts/
+# artifacts:
+#   download:
+#     when: always
+#     match:
+#       - console.log
+#       - *.html
+#     directory: ./artifacts/

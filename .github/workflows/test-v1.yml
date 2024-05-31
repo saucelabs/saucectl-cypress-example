@@ -34,8 +34,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
+          node-version-file: ".nvmrc"
+          cache: "npm"
           cache-dependency-path: v1/examples/cucumber/package-lock.json
 
       - name: Install dependencies
@@ -56,8 +56,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
+          node-version-file: ".nvmrc"
+          cache: "npm"
           cache-dependency-path: v1/examples/typescript/package-lock.json
 
       - name: Install dependencies
@@ -78,8 +78,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
+          node-version-file: ".nvmrc"
+          cache: "npm"
           cache-dependency-path: v1/examples/allure-plugin/package-lock.json
 
       - name: Install dependencies
@@ -103,8 +103,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
+          node-version-file: ".nvmrc"
+          cache: "npm"
           cache-dependency-path: v1/examples/cypress-grep/package-lock.json
 
       - name: Install dependencies
@@ -126,3 +126,25 @@ jobs:
         uses: saucelabs/saucectl-run-action@v3
         with:
           working-directory: ./v1/examples/webkit
+
+  multi-reporter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+          cache-dependency-path: v1/examples/multi-reporter/package-lock.json
+
+      - name: Install dependencies
+        working-directory: v1/examples/multi-reporter
+        run: npm ci
+
+      - name: Cypress with Cypress Grep
+        uses: saucelabs/saucectl-run-action@v3
+        with:
+          working-directory: v1/examples/multi-reporter
