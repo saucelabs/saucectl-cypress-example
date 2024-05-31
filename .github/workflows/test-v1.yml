@@ -148,3 +148,6 @@ jobs:
         uses: saucelabs/saucectl-run-action@v4
         with:
           working-directory: v1/examples/multi-reporter
+
+      - name: Verify mochawesome artifacts exist
+        run: stat v1/examples/multi-reporter/artifacts/**/index.html

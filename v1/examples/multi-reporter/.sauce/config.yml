@@ -46,11 +46,11 @@ suites:
     platformName: "macOS 13"
     config:
       specPattern: ["cypress/e2e/**/*.*"]
+
 # Controls what artifacts to fetch when the suites have finished.
-# artifacts:
-#   download:
-#     when: always
-#     match:
-#       - console.log
-#       - *.html
-#     directory: ./artifacts/
+artifacts:
+  download:
+    when: always
+    match:
+      - "*.html"
+    directory: ./artifacts/
