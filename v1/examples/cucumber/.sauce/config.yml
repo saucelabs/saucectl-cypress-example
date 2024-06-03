@@ -11,7 +11,7 @@ sauce:
     # build: Github Run $GITHUB_RUN_ID
 cypress:
   version: 13.7.3 # See https://docs.saucelabs.com/web-apps/automated-testing/cypress/#supported-testing-platforms for a list of supported versions.
-  configFile: "cypress.config.js"  # We determine related files based on the location of the config file.
+  configFile: "cypress.config.js" # We determine related files based on the location of the config file.
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
 suites:
@@ -19,7 +19,7 @@ suites:
     browser: "chrome"
     platformName: "Windows 11"
     config:
-      specPattern: [ "cypress/e2e/**/*.feature" ] # Cypress native glob support.
+      specPattern: ["cypress/e2e/**/*.feature"] # Cypress native glob support.
 
 #  - name: "Cucumber w/ allure-plugin"
 #    browser: "chrome"
@@ -49,3 +49,6 @@ npm:
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0"
     "esbuild": "0.17.18"
 
+reporters:
+  spotlight: # Prints an overview of failed or otherwise interesting jobs.
+    enabled: true
