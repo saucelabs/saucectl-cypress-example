@@ -18,10 +18,10 @@ suites:
   - name: "Chrome on Windows"
     browser: "chrome"
     platformName: "Windows 11"
-    screenResolution: "1920x1080"  # (optional)
+    screenResolution: "1920x1080" # (optional)
     shard: spec
     config:
-      specPattern: [ "cypress/e2e/**/*.*" ] # Cypress native glob support.
+      specPattern: ["cypress/e2e/**/*.*"] # Cypress native glob support.
 
 # Controls what artifacts to fetch when the suites have finished.
 artifacts:
@@ -38,3 +38,7 @@ artifacts:
 npm:
   dependencies:
     - typescript
+
+reporters:
+  spotlight: # Prints an overview of failed or otherwise interesting jobs.
+    enabled: true

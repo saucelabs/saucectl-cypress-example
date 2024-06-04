@@ -20,4 +20,8 @@ suites:
     platformName: macOS 12
     shard: spec
     config:
-      specPattern: [ "cypress/e2e/**/*.*" ]
+      specPattern: ["cypress/e2e/**/*.*"]
+
+reporters:
+  spotlight: # Prints an overview of failed or otherwise interesting jobs.
+    enabled: true

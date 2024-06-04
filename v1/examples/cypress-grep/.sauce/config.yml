@@ -17,7 +17,7 @@ suites:
     browser: chrome
     platformName: Windows 11
     config:
-      specPattern: [ "cypress/e2e/**/*.*" ]
+      specPattern: ["cypress/e2e/**/*.*"]
       env:
         grepTags: "@smoke"
 
@@ -25,7 +25,7 @@ suites:
     browser: chrome
     platformName: Windows 11
     config:
-      specPattern: [ "cypress/e2e/**/*.*" ]
+      specPattern: ["cypress/e2e/**/*.*"]
       env:
         grep: "type"
 
@@ -38,7 +38,7 @@ suites:
     # This is similar behaviour to the `grepFilterSpecs` option in @cypress/grep
     shardGrepEnabled: true
     config:
-      specPattern: [ "cypress/e2e/**/*.*" ]
+      specPattern: ["cypress/e2e/**/*.*"]
       env:
         grepTags: "@smoke"
 # The npm configuration below tells saucectl to bundle the locally installed
@@ -47,3 +47,7 @@ suites:
 npm:
   dependencies:
     - "@cypress/grep"
+
+reporters:
+  spotlight: # Prints an overview of failed or otherwise interesting jobs.
+    enabled: true

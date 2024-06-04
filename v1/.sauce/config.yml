@@ -38,3 +38,7 @@ artifacts:
     match:
       - console.log
     directory: ./artifacts/
+
+reporters:
+  spotlight: # Prints an overview of failed or otherwise interesting jobs.
+    enabled: true
