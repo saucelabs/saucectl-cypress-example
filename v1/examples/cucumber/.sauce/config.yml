@@ -20,7 +20,7 @@ suites:
     platformName: "Windows 11"
     shard: spec
     config:
-      specPattern: ["cypress/2e/**/*.feature"] # Cypress native glob support.
+      specPattern: ["cypress\\2e\\**\\*.feature"] # Cypress native glob support.
 
 #  - name: "Cucumber w/ allure-plugin"
 #    browser: "chrome"
