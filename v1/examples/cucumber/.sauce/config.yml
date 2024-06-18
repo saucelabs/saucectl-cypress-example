@@ -18,8 +18,9 @@ suites:
   - name: "Chrome - Windows"
     browser: "chrome"
     platformName: "Windows 11"
+    shard: spec
     config:
-      specPattern: ["cypress/e2e/**/*.feature"] # Cypress native glob support.
+      specPattern: ["cypress/2e/**/*.feature"] # Cypress native glob support.
 
 #  - name: "Cucumber w/ allure-plugin"
 #    browser: "chrome"
@@ -31,12 +32,12 @@ suites:
 #      specPattern: [ "cypress/e2e/**/*.feature" ] # Cypress native glob support.
 
 # Controls what artifacts to fetch when the suites have finished.
-artifacts:
-  download:
-    when: always
-    match:
-      - "*"
-    directory: ./artifacts/
+# artifacts:
+#   download:
+#     when: always
+#     match:
+#       - "*"
+#     directory: ./artifacts/
 
 # https://docs.saucelabs.com/web-apps/automated-testing/cypress/advanced/#including-node-dependencies
 # Any additional dependencies need to be configured here so that they are packaged on demand.
