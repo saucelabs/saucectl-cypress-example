@@ -15,7 +15,7 @@ env:
 
 jobs:
   main:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,6 +23,7 @@ jobs:
       - name: Run saucectl
         uses: saucelabs/saucectl-run-action@v4
         with:
+          saucectl-version: "v0.178.1-rc.0"
           working-directory: v1
 
   cucumber:
