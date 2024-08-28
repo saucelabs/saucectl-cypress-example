@@ -8,6 +8,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@cypress/grep": "3.1.0"
+    "@cypress/grep": "4.1.0"
   }
 }
