@@ -44,10 +44,10 @@ artifacts:
 # Select only what you truly need to get your tests running, as installing dependencies takes time.
 npm:
   packages:
-    "@badeball/cypress-cucumber-preprocessor": "^17.2.0"
-    "@shelex/cypress-allure-plugin": "^2.28.5" # allure-plugin dependency
-    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0"
-    "esbuild": "0.17.18"
+    "@badeball/cypress-cucumber-preprocessor": "^20.1.2"
+    "@shelex/cypress-allure-plugin": "^2.40.2" # allure-plugin dependency
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.2"
+    "esbuild": "0.23.1"
 
 reporters:
   spotlight: # Prints an overview of failed or otherwise interesting jobs.

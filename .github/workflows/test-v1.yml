@@ -38,10 +38,6 @@ jobs:
           cache: "npm"
           cache-dependency-path: v1/examples/cucumber/package-lock.json
 
-      - name: Install dependencies
-        working-directory: v1/examples/cucumber
-        run: npm ci
-
       - name: Run saucectl
         uses: saucelabs/saucectl-run-action@v4
         with:

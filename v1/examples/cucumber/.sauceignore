@@ -16,4 +16,3 @@ cypress/screenshots/
 *.gif
 package.json
 node_modules
-
