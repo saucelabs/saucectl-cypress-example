@@ -1,0 +1,8 @@
+# --- Required ---
+username: $SAUCE_USERNAME
+access-key: $SAUCE_ACCESS_KEY
+region: us-west-1
+tunnel-name: my-tunnel
+
+# --- Options ---
+proxy-localhost: allow
