@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: cypress
+sauce:
+  region: us-west-1
+  tunnel:
+    name: my-tunnel
+cypress:
+  version: 13.13.3
+  configFile: cypress.config.ts
+
+suites:
+  - name: Chrome on Windows
+    browser: "chrome"
+    platformName: Windows 11
+    config:
+      specPattern:
+        - "**/*.cy.*"
+npm:
+  packages:
+    typescript: "~5.5.2"
+    ts-node: "10.9.1"
+    "@nx/cypress": 19.7.2
+    vite: "^5.0.0"
