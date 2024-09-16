@@ -19,6 +19,9 @@
   },
   "plugins": [
     {
+      "plugin": "nx-saucectl"
+    },
+    {
       "plugin": "@nx/vite/plugin",
       "options": {
         "buildTargetName": "build",
