@@ -9,7 +9,7 @@ export default defineConfig({
   cacheDir: '../../node_modules/.vite/apps/nx-example',
 
   server: {
-    port: 4200,
+    port: 3000,
     host: 'localhost',
   },
 
