@@ -30,3 +30,9 @@ npx nx run nx-example:serve
 ```sh
 npx nx run nx-example-e2e:saucectl
 ```
+
+or
+
+```sh
+npx nx affected -t saucectl
+```
