@@ -1,7 +1,8 @@
 import { getGreeting } from '../support/app.po';
 
 describe('nx-example-e2e', () => {
-  beforeEach(() => cy.visit('/'));
+  const page = Cypress.env('SAUCE_JOB_ID') ? 'http://localhost:3000' : '/';
+  beforeEach(() => cy.visit(page));
 
   it('should display welcome message', () => {
     // Custom command example, see `../support/commands.ts` file

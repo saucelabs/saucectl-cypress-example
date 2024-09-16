@@ -1,3 +1,4 @@
+import { env } from 'node:process';
 import { nxE2EPreset } from '@nx/cypress/plugins/cypress-preset';
 
 import { defineConfig } from 'cypress';
@@ -14,6 +15,6 @@ export default defineConfig({
       ciWebServerCommand: 'npx nx run nx-example:preview',
       ciBaseUrl: 'http://localhost:4300',
     }),
-    baseUrl: 'http://localhost:4200',
+    ...(!env.SAUCE_JOB_ID) && { baseUrl: 'http://localhost:3000' },
   },
 });
