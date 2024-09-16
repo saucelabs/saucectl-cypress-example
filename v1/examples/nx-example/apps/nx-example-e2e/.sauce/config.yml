@@ -9,7 +9,7 @@ cypress:
   configFile: cypress.config.ts
 
 suites:
-  - name: Chrome on Windows
+  - name: nx-example suite
     browser: "chrome"
     platformName: Windows 11
     config:
