@@ -9,7 +9,7 @@ sauce:
       - cypress-example
 
 cypress:
-  version: 13.7.3
+  version: 13.14.2
   configFile: "cypress.config.js"
 
 rootDir: ./
@@ -17,8 +17,8 @@ rootDir: ./
 suites:
   - name: (Experimental) webkit test
     browser: webkit
-    platformName: macOS 12
-    shard: spec
+    platformName: Windows 11
+    shard: concurrency
     config:
       specPattern: ["cypress/e2e/**/*.*"]
 
