@@ -140,3 +140,14 @@ jobs:
 
       - name: Verify mochawesome artifacts exist
         run: stat v1/examples/multi-reporter/artifacts/**/index.html
+
+  component-testing-react-cra5:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run saucectl
+        uses: saucelabs/saucectl-run-action@v4
+        with:
+          working-directory: v1/examples/component-testing-react-cra5
