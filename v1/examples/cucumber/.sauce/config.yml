@@ -21,15 +21,6 @@ suites:
     config:
       specPattern: ["cypress/e2e/**/*.feature"] # Cypress native glob support.
 
-#  - name: "Cucumber w/ allure-plugin"
-#    browser: "chrome"
-#    platformName: "Windows 11"
-#    config:
-#      env:
-#        allure: true
-#        allureResultsPath: __assets__/allure-results/
-#      specPattern: [ "cypress/e2e/**/*.feature" ] # Cypress native glob support.
-
 # Controls what artifacts to fetch when the suites have finished.
 artifacts:
   download:
@@ -43,11 +34,7 @@ artifacts:
 # These dependencies are picked up from the node_modules folder, so they need to be already installed locally.
 # Select only what you truly need to get your tests running, as installing dependencies takes time.
 npm:
-  packages:
-    "@badeball/cypress-cucumber-preprocessor": "^20.1.2"
-    "@shelex/cypress-allure-plugin": "^2.40.2" # allure-plugin dependency
-    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.2"
-    "esbuild": "0.23.1"
+  usePackageLock: true
 
 reporters:
   spotlight: # Prints an overview of failed or otherwise interesting jobs.
