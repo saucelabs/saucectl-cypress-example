@@ -21,14 +21,6 @@ npm install -g saucectl
 saucectl configure
 ```
 
-## Install Local NPM Dependencies
-
-Run the following command inside the `examples/cucumber` folder :rocket:
-
-```bash
-npm install
-```
-
 ## Running The Examples
 
 Run the following command inside the `examples/cucumber` folder :rocket:
@@ -45,30 +37,23 @@ Run the following command inside the `examples/cucumber` folder :rocket:
 saucectl run --env "CYPRESS_TAGS=@smoke"
 ```
 
-### Generating JSON report
+## Reports
 
-Specify [.cypress-cucumber-preprocessorrc.json](./.cypress-cucumber-preprocessorrc.json) and enable JSON report as follows. To get the JSON report, you should set the output file under `__assets__`.
-Check out [here](https://github.com/badeball/cypress-cucumber-preprocessor/blob/master/docs/json-report.md) for more details.
+### Generating
 
-```
-"json": {
-  "enabled": true,
-  "output": "__assets__/<MY_CUCUMBER_REPORT>.json"
-}
-```
+The project includes configuration to generate a JSON report and an HTML
+report. These reports are enabled and configured in the
+[.cypress-cucumber-preprocessorrc.json](./.cypress-cucumber-preprocessorrc.json)
+file.
 
-### Generating HTML report
+### Downloading
 
-Specify [.cypress-cucumber-preprocessorrc.json](./.cypress-cucumber-preprocessorrc.json) and enable HTML report as follows. To get the report, you should set the output file under `__assets__`.
+The reports are configured to output to a directory called `__assets__` which
+allows them to automatically be attached to the job that executed the tests. The
+JSON report can be viewed directly from the job link.
 
-```
-"html": {
-  "enabled": true,
-  "output": "__assets__/<MY_CUCUMBER_REPORT>.html"
-}
-```
-
-The HTML report is not displayed on the web UI but can be downloaded by configuring the `artifacts` setting in [.sauce/config.yml](.sauce/config.yml).
+However, the HTML report is not displayed on the web UI. Itcan be downloaded by 
+configuring the `artifacts` setting in [.sauce/config.yml](.sauce/config.yml).
 
 ```
 # Controls what artifacts to fetch when the suites have finished.
