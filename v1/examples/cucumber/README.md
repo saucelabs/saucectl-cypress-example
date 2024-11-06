@@ -52,7 +52,7 @@ The reports are configured to output to a directory called `__assets__` which
 allows them to automatically be attached to the job that executed the tests. The
 JSON report can be viewed directly from the job link.
 
-However, the HTML report is not displayed on the web UI. Itcan be downloaded by 
+However, the HTML report is not displayed on the web UI. It can be downloaded by 
 configuring the `artifacts` setting in [.sauce/config.yml](.sauce/config.yml).
 
 ```
