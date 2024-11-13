@@ -11,7 +11,7 @@ sauce:
     build: Github Run $GITHUB_RUN_ID
 
 cypress:
-  version: 13.15.1
+  version: 13.15.2
   configFile: "cypress.config.js"
   reporters:
     - name: cypress-mochawesome-reporter
