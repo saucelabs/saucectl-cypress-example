@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: cypress
+sauce:
+  region: us-west-1
+  concurrency: 10 # Controls how many suites are executed at the same time.
+  metadata:
+    tags:
+      - cypress-example
+cypress:
+  version: 14.0.0 # See https://docs.saucelabs.com/web-apps/automated-testing/cypress/#supported-testing-platforms for a list of supported versions.
+  configFile: "cypress.config.ts"
+
+# Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
+rootDir: ./
+suites:
+  - name: "Cypress Component Testing on Windows"
+    browser: "chrome"
+    platformName: "Windows 11"
+    screenResolution: "1920x1080" # (optional)
+    config:
+      testingType: component
+      specPattern: ["**/*.cy.{js,jsx,ts,tsx}"] # Cypress native glob support.
+
+  - name: "Cypress Component Testing on Mac"
+    browser: "chrome"
+    browserVersion: "latest"
+    platformName: "macOS 13"
+    config:
+      testingType: component
+      specPattern: ["**/*.cy.{js,jsx,ts,tsx}"] # Cypress native glob support.
+
+reporters:
+  spotlight: # Prints an overview of failed or otherwise interesting jobs.
+    enabled: true
+
+npm:
+  usePackageLock: true
