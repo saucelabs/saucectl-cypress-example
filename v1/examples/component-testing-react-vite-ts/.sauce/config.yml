@@ -3,14 +3,11 @@ kind: cypress
 sauce:
   region: us-west-1
   concurrency: 10 # Controls how many suites are executed at the same time.
-  # metadata:
-  #   tags:
-  #     - e2e
-  #     - release team
-  #     - other tag
-  #   build: Github Run $GITHUB_RUN_ID
+  metadata:
+    tags:
+      - cypress-example
 cypress:
-  version: 13.16.0 # See https://docs.saucelabs.com/web-apps/automated-testing/cypress/#supported-testing-platforms for a list of supported versions.
+  version: 14.0.0 # See https://docs.saucelabs.com/web-apps/automated-testing/cypress/#supported-testing-platforms for a list of supported versions.
   configFile: "cypress.config.ts"
 
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
@@ -37,22 +34,4 @@ reporters:
     enabled: true
 
 npm:
-  packages:
-    "@testing-library/jest-dom": "^5.16.4"
-    "@testing-library/react": "^13.0.1"
-    "@testing-library/user-event": "^13.5.0"
-    "@types/jest": "^27.4.1"
-    "@types/node": "^16.11.27"
-    "@types/react": "^18.0.5"
-    "@types/react-dom": "^18.0.1"
-    "msw": "^0.39.2"
-    "react": "^18.0.0"
-    "react-dom": "^18.0.0"
-    "react-scripts": "5.0.1"
-    "typescript": "^4.6.3"
-    "web-vitals": "^2.1.4"
-    "autoprefixer": "^10.4.4"
-    "postcss": "^8.4.12"
-    "tailwindcss": "^3.0.24"
-    "ajv-keywords": "^5.1.0"
-    "ajv": "^8.17.1"
+  usePackageLock: true

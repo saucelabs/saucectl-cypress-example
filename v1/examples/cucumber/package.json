@@ -1,9 +1,9 @@
 {
   "dependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "21.0.2",
+    "@badeball/cypress-cucumber-preprocessor": "22.0.0",
     "@bahmutov/cypress-esbuild-preprocessor": "2.2.3",
     "@shelex/cypress-allure-plugin": "^2.40.2",
-    "cypress": "13.16.0",
+    "cypress": "14.0.0",
     "esbuild": "0.24.0"
   }
 }
