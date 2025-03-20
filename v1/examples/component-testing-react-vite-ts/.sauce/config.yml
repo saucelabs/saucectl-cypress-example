@@ -7,7 +7,7 @@ sauce:
     tags:
       - cypress-example
 cypress:
-  version: 14.0.0 # See https://docs.saucelabs.com/web-apps/automated-testing/cypress/#supported-testing-platforms for a list of supported versions.
+  version: 14.1.0 # See https://docs.saucelabs.com/web-apps/automated-testing/cypress/#supported-testing-platforms for a list of supported versions.
   configFile: "cypress.config.ts"
 
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).

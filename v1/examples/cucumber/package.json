@@ -3,7 +3,7 @@
     "@badeball/cypress-cucumber-preprocessor": "22.0.0",
     "@bahmutov/cypress-esbuild-preprocessor": "2.2.3",
     "@shelex/cypress-allure-plugin": "^2.40.2",
-    "cypress": "14.0.0",
+    "cypress": "14.1.0",
     "esbuild": "0.24.0"
   }
 }
