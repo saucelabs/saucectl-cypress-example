@@ -13,21 +13,8 @@ sauce:
 cypress:
   version: 14.1.0
   configFile: "cypress.config.js"
-  reporters:
-    - name: cypress-mochawesome-reporter
-      options:
-        reportDir: "__assets__/cypress/report"
-        charts: true
-        reportPageTitle: "custom-title"
-        embeddedScreenshots: true
-        inlineAssets: true
-        saveAllAttempts: false
-        saveJson: false
-        ignoreVideos: true # Must be ignored, the plugin will fail otherwise.
-
 npm:
-  dependencies:
-    - "cypress-mochawesome-reporter"
+  usePackageLock: true
 
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
