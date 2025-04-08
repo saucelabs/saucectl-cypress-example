@@ -1,20 +1,15 @@
-const { defineConfig } = require("cypress");
+import { defineConfig } from "cypress";
 
-module.exports = defineConfig({
-  reporter: 'cypress-mochawesome-reporter',
+export default defineConfig({
+  reporter: "cypress-multi-reporters",
+
   reporterOptions: {
-    charts: true,
-    reportPageTitle: 'custom-title',
-    embeddedScreenshots: true,
-    inlineAssets: true,
-    saveAllAttempts: false,
-    saveJson: false,
-    ignoreVideos: true, //  Must be ignored, the plugin will fail otherwise. Videos are enabled on Sauce by default.
-    reportDir: '__assets__/cypress/report',
+    configFile: "reporter-config.json",
   },
+
   e2e: {
     setupNodeEvents(on, config) {
-      require("cypress-mochawesome-reporter/plugin")(on);
+      // implement node event listeners here
     },
   },
 });

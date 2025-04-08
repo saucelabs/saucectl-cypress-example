@@ -41,6 +41,7 @@ artifacts:
     when: always
     match:
       - "*.html"
+      - "*.xml"
     directory: ./artifacts/
 
 reporters:
