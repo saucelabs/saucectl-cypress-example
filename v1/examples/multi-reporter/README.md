@@ -4,15 +4,11 @@ Example running saucectl with cypress & [multiple reporters](https://docs.cypres
 
 To illustrate how to run tests with multiple reporters, we will use the
 following reporters:
-- [cypress-mochawesome-reporter](https://github.com/LironEr/cypress-mochawesome-reporter)
+- [mochawesome](https://github.com/adamgruber/mochawesome)
+- [mocha-junit-reporter](https://github.com/michaelleeallen/mocha-junit-reporter)
 
-Our runner is preconfigured to use [cypress-multi-reporters](https://github.com/YOU54F/cypress-plugins/tree/master/cypress-multi-reporters)
-by default. This allows you to easily define additional reporters via the
-`cypress.reporters` option in your [.sauce/config.yml](.sauce/config.yml).
-
-The `cypress-mochawesome-reporter` plugin still needs to be hooked up to
-Cypress events in your `cypress.config.js`. The exact needs of the plugin will
-vary depending on the plugin you choose.
+And we'll use [cypress-multi-reporters](https://www.npmjs.com/package/cypress-multi-reporters)
+to configure both reporters.
 
 ## What You'll Need
 
