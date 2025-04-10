@@ -139,7 +139,7 @@ jobs:
           working-directory: v1/examples/multi-reporter
 
       - name: Verify mochawesome artifacts exist
-        run: stat v1/examples/multi-reporter/artifacts/**/index.html
+        run: stat v1/examples/multi-reporter/artifacts/**/mochawesome.html
 
   component-testing-react-vite-ts:
     runs-on: ubuntu-latest

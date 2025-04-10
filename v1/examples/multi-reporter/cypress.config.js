@@ -1,9 +1,12 @@
-const { defineConfig } = require("cypress");
+import { defineConfig } from "cypress";
 
-module.exports = defineConfig({
+export default defineConfig({
+  reporter: "cypress-multi-reporters",
+  reporterOptions: {
+    configFile: "reporter-config.json",
+  },
   e2e: {
     setupNodeEvents(on, config) {
-      require("cypress-mochawesome-reporter/plugin")(on);
     },
   },
 });

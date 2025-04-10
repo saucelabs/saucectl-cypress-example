@@ -1,4 +1,5 @@
 # This file instructs saucectl to not package any files mentioned here.
+node_modules
 /examples/
 /artifacts/
 cypress/videos/
