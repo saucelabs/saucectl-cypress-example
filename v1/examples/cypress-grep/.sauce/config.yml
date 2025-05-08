@@ -9,7 +9,7 @@ sauce:
       - cypress-grep-example
     build: Github Run $GITHUB_RUN_ID
 cypress:
-  version: 14.1.0
+  version: 14.3.2
   configFile: "cypress.config.js"
 rootDir: ./
 suites:
