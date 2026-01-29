@@ -27,7 +27,7 @@ suites:
     browser: "firefox"
     browserVersion: "latest"
     shard: spec
-    platformName: "macOS 12"
+    platformName: "macOS 13"
     config:
       specPattern: ["cypress/e2e/**/*.*"]
 
