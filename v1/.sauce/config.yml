@@ -30,6 +30,18 @@ suites:
     platformName: "macOS 13"
     config:
       specPattern: ["cypress/e2e/**/*.*"]
+  - name: "Chrome on macOS 14 (Apple Silicon)"
+    browser: "chrome"
+    shard: spec
+    platformName: "macOS 14"
+    config:
+      specPattern: ["cypress/e2e/**/*.*"]
+  - name: "Webkit on macOS 14 (Apple Silicon)"
+    browser: "webkit"
+    shard: spec
+    platformName: "macOS 14"
+    config:
+      specPattern: ["cypress/e2e/**/*.*"]
   - name: "Chrome on macOS 15 (Apple Silicon)"
     browser: "chrome"
     shard: spec
