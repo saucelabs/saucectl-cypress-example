@@ -54,6 +54,18 @@ suites:
     platformName: "macOS 15"
     config:
       specPattern: ["cypress/e2e/**/*.*"]
+  - name: "Chrome on macOS 26 (Apple Silicon)"
+    browser: "chrome"
+    shard: spec
+    platformName: "macOS 26"
+    config:
+      specPattern: ["cypress/e2e/**/*.*"]
+  - name: "Webkit on macOS 26 (Apple Silicon)"
+    browser: "webkit"
+    shard: spec
+    platformName: "macOS 26"
+    config:
+      specPattern: ["cypress/e2e/**/*.*"]
 
 # Controls what artifacts to fetch when the suites have finished.
 artifacts:
