@@ -4,7 +4,7 @@
     "output": "__assets__/cucumber_report.json"
   },
   "html": {
-    "enabled": true,
+    "enabled": false,
     "output": "__assets__/cucumber_report.html"
   }
 }
